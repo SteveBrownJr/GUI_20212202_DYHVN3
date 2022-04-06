@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,11 @@ namespace Game.Logic
 {
     internal class GameLogic : IGameModel, IGameControl
     {
-        string level;
-        int x;
-        int y;
+        string levelPath;
+        List<IEntity> entitys;
         public GameLogic()
         {
-            
+            entitys=new List<IEntity>();
         }
     }
 }
