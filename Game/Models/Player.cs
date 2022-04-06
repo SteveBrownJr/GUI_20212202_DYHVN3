@@ -20,7 +20,15 @@ namespace Game.Models
         public int X { get => x; set => x=value; }
         public int Y { get => y; set => y = value; }
         public string TexturePath { get => texturePath; set => texturePath=value; }
-
+        public Player(string _name, int _id, string _description, int _x, int _y, string _texturePath)
+        {
+            Name = _name;
+            Id = _id;
+            Description = _description;
+            X = _x;
+            Y = _y;
+            TexturePath = _texturePath;
+        }
         public void MeleeAttack()
         {
             throw new NotImplementedException();

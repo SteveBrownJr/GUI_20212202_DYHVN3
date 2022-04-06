@@ -8,5 +8,6 @@ namespace Game.Renderer
 {
     internal class GameRenderer
     {
+        
     }
 }
