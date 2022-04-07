@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Models
 {
-    internal interface IEntity
+    public interface IEntity
     {
         public string Name { get; set; }
         public int Id { get; set; }

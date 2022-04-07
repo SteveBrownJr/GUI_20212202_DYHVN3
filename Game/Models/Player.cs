@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Models
 {
-    class Player : IEntity
+    public class Player : IEntity
     {
         string name;
         int id;

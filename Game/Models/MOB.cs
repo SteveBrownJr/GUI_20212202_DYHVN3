@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Models
 {
-    class MOB : IEntity
+    public class MOB : IEntity
     {
         string name;
         int id;

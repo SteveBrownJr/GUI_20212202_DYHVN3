@@ -24,5 +24,36 @@ namespace Game
         {
             InitializeComponent();
         }
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.A:
+                    {
+
+                    }break;
+                    
+                case Key.W:
+                    {
+
+                    }
+                    break;
+                case Key.S:
+                    {
+
+                    }
+                    break;
+                case Key.D:
+                    {
+
+                    }
+                    break;
+                default:
+                    {
+
+                    }
+                    break;
+            }
+        }
     }
 }
