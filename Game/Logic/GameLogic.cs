@@ -9,11 +9,11 @@ namespace Game.Logic
 {
     internal class GameLogic : IGameModel, IGameControl
     {
-        string levelPath;
+        Map map;
         List<IEntity> entitys;
         public string GetLevelPath()
         {
-            return levelPath;
+            return map.LevelPath;
         }
         public List<IEntity> GetEntities()
         {

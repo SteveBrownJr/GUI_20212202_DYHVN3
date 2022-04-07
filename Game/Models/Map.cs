@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Game.Models
 {
-    internal class Map
+    public class Map
     {
+        string levelPath;
+        public string LevelPath { get { return levelPath; } }
+        public Map(string levelPath)
+        {
+            this.levelPath = levelPath;
+        }
     }
 }
