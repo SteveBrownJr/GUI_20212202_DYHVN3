@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,10 @@ namespace Game
         public MainWindow()
         {
             InitializeComponent();
+            GameLogic logic = new GameLogic();
+            renderer.SetupModel(logic);
         }
+        
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             switch (e.Key)
@@ -54,6 +58,18 @@ namespace Game
                     }
                     break;
             }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            renderer.Resize(new Size(grid.ActualWidth,grid.ActualHeight));
+            this.InvalidateVisual();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            renderer.Resize(new Size(grid.ActualWidth, grid.ActualHeight));
+            this.InvalidateVisual();
         }
     }
 }
