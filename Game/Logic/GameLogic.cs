@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace Game.Logic
 {
@@ -23,6 +24,10 @@ namespace Game.Logic
         {
             entitys=new List<IEntity>();
             entitys.Add(new Player("Player",0,"TheOnlyOnePlayer",10,10,"player.png"));
+        }
+        public void TimeStep()
+        {
+
         }
         public void PlayerMoveLeft()
         {

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Game
 {
@@ -27,6 +28,13 @@ namespace Game
             InitializeComponent();
             logic = new GameLogic();
             renderer.SetupModel(logic);
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(0.125);
+            dt.Tick += (sender, args) =>
+            {
+                logic.TimeStep();
+            };
+            dt.Start();
         }
         
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -36,32 +44,32 @@ namespace Game
             {
                 case Key.A:
                     {
-                        logic.PlayerMoveLeft();
+                        renderer.PlayerControl(Renderer.controls.LEFT);
                     }break;
                     
                 case Key.W:
                     {
-                        logic.PlayerJump();
+                        renderer.PlayerControl(Renderer.controls.UP);
                     }
                     break;
                 case Key.S:
                     {
-                        logic.PlayerCrouch();
+                        renderer.PlayerControl(Renderer.controls.DOWN);
                     }
                     break;
                 case Key.D:
                     {
-                        logic.PlayerMoveRight();
+                        renderer.PlayerControl(Renderer.controls.RIGHT);
                     }
                     break;
                 case Key.Space:
                     {
-                        logic.PlayerMelee();
+                        renderer.PlayerControl(Renderer.controls.MELEE);
                     }
                     break;
                 case Key.LeftShift:
                     {
-                        logic.PlayerShoot();
+                        renderer.PlayerControl(Renderer.controls.ATTACK);
                     }
                     ;break;
                 default:
