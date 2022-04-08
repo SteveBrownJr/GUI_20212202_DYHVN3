@@ -43,6 +43,10 @@ namespace Game.Logic
         public void PlayerMelee()
         {
 
-        }        
+        }
+        public void PlayerAttack()
+        {
+
+        }
     }
 }
