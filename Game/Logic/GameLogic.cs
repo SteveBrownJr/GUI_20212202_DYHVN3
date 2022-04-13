@@ -1,4 +1,5 @@
 ﻿using Game.Models;
+using Game.Physics;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +17,7 @@ namespace Game.Logic
         Map map;
         List<IEntity> entitys;
         int _lvl;
-
+        GamePhysics physics;
         public string GetLevelPath()
         {
             return map.LevelPath;
@@ -35,20 +36,22 @@ namespace Game.Logic
         }
         public GameLogic(int lvl)
         {
-            this._lvl = lvl;
+            _lvl = lvl;
+            map = new Map(_lvl);
+            
             entitys=new List<IEntity>();
-            entitys.Add(new Player("Player",
+            physics = new GamePhysics(entitys);
+            entitys.Add(new Player(map,"Player",
                 0,
                 "TheOnlyOnePlayer",
                 200,
                 200,
                 Path.Combine("Graphics","Player","player.png")
                 ));
-            map = new Map(Path.Combine("Graphics", "wagons", "wagon" + _lvl + ".png"));
         }
         public void TimeStep()
         {
-
+            physics.Step();
         }
         public void PlayerMoveLeft()
         {

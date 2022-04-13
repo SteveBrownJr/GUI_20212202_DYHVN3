@@ -24,6 +24,7 @@
     <None Remove="Graphics\Player\player.png" />
     <None Remove="Graphics\wagons\wagon.png" />
     <None Remove="Graphics\wagons\wagon0.png" />
+    <None Remove="WagonDefinitions.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,6 +71,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\wagons\wagon0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WagonDefinitions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

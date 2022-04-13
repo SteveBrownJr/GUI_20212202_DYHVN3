@@ -14,14 +14,19 @@ namespace Game.Models
         int y;
         string texturePath;
         string description;
+        Map m;
+
         public string Name { get => name; set => name = value; }
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
         public int X { get => x; set => x=value; }
         public int Y { get => y; set => y = value; }
         public string TexturePath { get => texturePath; set => texturePath=value; }
-        public Player(string _name, int _id, string _description, int _x, int _y, string _texturePath)
+        public bool standing_on_the_ground { get => m.Floor == this.Y; }
+
+        public Player(Map m,string _name, int _id, string _description, int _x, int _y, string _texturePath)
         {
+            this.m = m;
             Name = _name;
             Id = _id;
             Description = _description;

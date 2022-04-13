@@ -37,6 +37,7 @@ namespace Game
             dt.Tick += (sender, args) =>
             {
                 logic.TimeStep();
+                renderer.InvalidateVisual();
             };
 
             dt.Start();
@@ -44,43 +45,36 @@ namespace Game
         
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-            renderer.InvalidateVisual();
             switch (e.Key)
             {
                 case Key.A:
                     {
                         renderer.PlayerControl(Renderer.controls.LEFT);
-                        renderer.InvalidateVisual();
                     }break;
                     
                 case Key.W:
                     {
                         renderer.PlayerControl(Renderer.controls.UP);
-                        renderer.InvalidateVisual();
                     }
                     break;
                 case Key.S:
                     {
                         renderer.PlayerControl(Renderer.controls.DOWN);
-                        renderer.InvalidateVisual();
                     }
                     break;
                 case Key.D:
                     {
                         renderer.PlayerControl(Renderer.controls.RIGHT);
-                        renderer.InvalidateVisual();
                     }
                     break;
                 case Key.Space:
                     {
                         renderer.PlayerControl(Renderer.controls.MELEE);
-                        renderer.InvalidateVisual();
                     }
                     break;
                 case Key.LeftShift:
                     {
                         renderer.PlayerControl(Renderer.controls.ATTACK);
-                        renderer.InvalidateVisual();
                     }
                     ;break;
                 default:
