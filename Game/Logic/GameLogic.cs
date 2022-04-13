@@ -16,11 +16,18 @@ namespace Game.Logic
         Map map;
         List<IEntity> entitys;
         int _lvl;
-        public Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "wagons", "wagon"+_lvl+".png"), UriKind.RelativeOrAbsolute)));
 
         public string GetLevelPath()
         {
             return map.LevelPath;
+        }
+        public Player GetPlayer()
+        {
+            if (entitys[0]!=null)
+            {
+                return entitys[0] as Player;
+            }
+            return null;
         }
         public List<IEntity> GetEntities()
         {
@@ -30,7 +37,14 @@ namespace Game.Logic
         {
             this._lvl = lvl;
             entitys=new List<IEntity>();
-            entitys.Add(new Player("Player",0,"TheOnlyOnePlayer",10,10,"player.png"));
+            entitys.Add(new Player("Player",
+                0,
+                "TheOnlyOnePlayer",
+                200,
+                200,
+                Path.Combine("Graphics","Player","player.png")
+                ));
+            map = new Map(Path.Combine("Graphics", "wagons", "wagon" + _lvl + ".png"));
         }
         public void TimeStep()
         {
@@ -46,7 +60,7 @@ namespace Game.Logic
         }
         public void PlayerJump()
         {
-            entitys[0].Y+=20;
+            entitys[0].Y-=20;
         }
         public void PlayerCrouch()
         {

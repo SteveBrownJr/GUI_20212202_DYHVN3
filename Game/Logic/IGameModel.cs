@@ -1,9 +1,11 @@
-﻿using System.Windows.Media;
+﻿using Game.Models;
+using System.Windows.Media;
 
 namespace Game.Logic
 {
     internal interface IGameModel
     {
-        Brush WagonBrush { get; }
+        public string GetLevelPath();
+        public Player GetPlayer();
     }
 }

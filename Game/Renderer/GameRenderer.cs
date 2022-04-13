@@ -1,4 +1,5 @@
 ﻿using Game.Logic;
+using Game.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,9 @@ namespace Game.Renderer
         IGameModel model;
         IGameControl control;
         Size size;
+        Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
+        Player player => model.GetPlayer();
+        Brush PlayerBrush => player!=null ? new ImageBrush(new BitmapImage(new Uri(player.TexturePath, UriKind.RelativeOrAbsolute))) : null;
         public void SetupLogic(GameLogic logic)
         {
             this.model = logic;
@@ -28,16 +32,16 @@ namespace Game.Renderer
             switch (c)
             {
                 case controls.UP:
-
+                    control.PlayerJump();
                     break;
                 case controls.DOWN:
-
+                    control.PlayerCrouch();
                     break;
                 case controls.LEFT:
-
+                    control.PlayerMoveLeft();
                     break;
                 case controls.RIGHT:
-
+                    control.PlayerMoveRight();
                     break;
                 case controls.ATTACK:
 
@@ -58,11 +62,11 @@ namespace Game.Renderer
             
             base.OnRender(drawingContext);
             
-            if (model!=null && size.Width>50 && size.Height>50)
+            if (player!=null&&model!=null && size.Width>50 && size.Height>50)
             {
             
-                drawingContext.DrawRectangle(model.WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
-                
+                drawingContext.DrawRectangle(WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));             
             }
         }
     }
