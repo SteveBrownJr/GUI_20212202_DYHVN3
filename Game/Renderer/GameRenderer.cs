@@ -1,11 +1,13 @@
 ﻿using Game.Logic;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Game.Renderer
 {
@@ -15,9 +17,17 @@ namespace Game.Renderer
         IGameModel model;
         IGameControl control;
         Size size;
-        public void SetupModel(IGameModel model)
+        Brush WagonBrush
         {
-            this.model = model;
+            get
+            {
+                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics","wagons","wagon.png"),UriKind.RelativeOrAbsolute)));
+            }
+        }
+        public void SetupLogic(GameLogic logic)
+        {
+            this.model = logic;
+            this.control = logic;
         }
 
         public void PlayerControl(controls c)
@@ -58,7 +68,7 @@ namespace Game.Renderer
             if (model!=null && size.Width>50 && size.Height>50)
             {
             
-                drawingContext.DrawRectangle(Brushes.Black, new Pen(Brushes.Black,0),new Rect(0, 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
                 
             }
         }

@@ -8,7 +8,69 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Graphics\" />
+    <None Remove="Graphics\health\00of10hearts.png" />
+    <None Remove="Graphics\health\05of10heart.png" />
+    <None Remove="Graphics\health\05of20hearts.png" />
+    <None Remove="Graphics\health\05of30hearts.png" />
+    <None Remove="Graphics\health\10of10hearts.png" />
+    <None Remove="Graphics\health\10of20hearts.png" />
+    <None Remove="Graphics\health\10of30hearts.png" />
+    <None Remove="Graphics\health\15of20hearts.png" />
+    <None Remove="Graphics\health\15of30hearts.png" />
+    <None Remove="Graphics\health\20of20hearts.png" />
+    <None Remove="Graphics\health\20of30hearts.png" />
+    <None Remove="Graphics\health\25of30hearts.png" />
+    <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\Player\player.png" />
+    <None Remove="Graphics\wagons\wagon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphics\health\00of10hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of10heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of10hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\15of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\15of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\20of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\20of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\25of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\30of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\wagons\wagon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
