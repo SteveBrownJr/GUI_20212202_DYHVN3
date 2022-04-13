@@ -27,7 +27,7 @@ namespace Game
         {
             InitializeComponent();
 
-            logic = new GameLogic();
+            logic = new GameLogic(0);
             renderer.SetupLogic(logic);
 
             DispatcherTimer dt = new DispatcherTimer();

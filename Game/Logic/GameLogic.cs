@@ -1,9 +1,12 @@
 ﻿using Game.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Game.Logic
@@ -12,6 +15,9 @@ namespace Game.Logic
     {
         Map map;
         List<IEntity> entitys;
+        int _lvl;
+        public Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "wagons", "wagon"+_lvl+".png"), UriKind.RelativeOrAbsolute)));
+
         public string GetLevelPath()
         {
             return map.LevelPath;
@@ -20,8 +26,9 @@ namespace Game.Logic
         {
             return entitys;
         }
-        public GameLogic()
+        public GameLogic(int lvl)
         {
+            this._lvl = lvl;
             entitys=new List<IEntity>();
             entitys.Add(new Player("Player",0,"TheOnlyOnePlayer",10,10,"player.png"));
         }

@@ -23,6 +23,7 @@
     <None Remove="Graphics\health\30of30hearts.png" />
     <None Remove="Graphics\Player\player.png" />
     <None Remove="Graphics\wagons\wagon.png" />
+    <None Remove="Graphics\wagons\wagon0.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,7 +69,7 @@
     <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\wagons\wagon.png">
+    <Content Include="Graphics\wagons\wagon0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -17,13 +17,6 @@ namespace Game.Renderer
         IGameModel model;
         IGameControl control;
         Size size;
-        Brush WagonBrush
-        {
-            get
-            {
-                return new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics","wagons","wagon.png"),UriKind.RelativeOrAbsolute)));
-            }
-        }
         public void SetupLogic(GameLogic logic)
         {
             this.model = logic;
@@ -68,7 +61,7 @@ namespace Game.Renderer
             if (model!=null && size.Width>50 && size.Height>50)
             {
             
-                drawingContext.DrawRectangle(WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(model.WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
                 
             }
         }
