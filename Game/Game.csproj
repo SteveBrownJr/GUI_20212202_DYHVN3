@@ -7,4 +7,91 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Graphics\health\00of10hearts.png" />
+    <None Remove="Graphics\health\05of10heart.png" />
+    <None Remove="Graphics\health\05of20hearts.png" />
+    <None Remove="Graphics\health\05of30hearts.png" />
+    <None Remove="Graphics\health\10of10hearts.png" />
+    <None Remove="Graphics\health\10of20hearts.png" />
+    <None Remove="Graphics\health\10of30hearts.png" />
+    <None Remove="Graphics\health\15of20hearts.png" />
+    <None Remove="Graphics\health\15of30hearts.png" />
+    <None Remove="Graphics\health\20of20hearts.png" />
+    <None Remove="Graphics\health\20of30hearts.png" />
+    <None Remove="Graphics\health\25of30hearts.png" />
+    <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\levels\level0.png" />
+    <None Remove="Graphics\levels\level1.png" />
+    <None Remove="Graphics\levels\level2.png" />
+    <None Remove="Graphics\other\barell.png" />
+    <None Remove="Graphics\other\chest.png" />
+    <None Remove="Graphics\Player\player.png" />
+    <None Remove="Graphics\levels\wagon.png" />
+    <None Remove="WagonDefinitions.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphics\health\00of10hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of10heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\05of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of10hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\10of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\15of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\15of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\20of20hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\20of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\25of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\health\30of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\levels\level0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\levels\level1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\levels\level2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\other\barell.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\other\chest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WagonDefinitions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

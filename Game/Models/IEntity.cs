@@ -11,6 +11,7 @@ namespace Game.Models
         public string Name { get; set; }
         public int Id { get; set; }
         public string Description { get; set; }
+        bool standing_on_the_ground { get; }
         public int X { get; set; }
         public int Y { get; set; }
         public string TexturePath { get; set; }

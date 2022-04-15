@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game"
+        xmlns:renderer="clr-namespace:Game.Renderer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="768" Width="1360"
+        SizeChanged="Window_SizeChanged"
+        Loaded="Window_Loaded"
         KeyDown="OnKeyDownHandler">
-    <Grid>
-
+    <Grid x:Name="grid">
+        <renderer:GameRenderer x:Name="renderer"/>
     </Grid>
 </Window>

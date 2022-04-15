@@ -7,5 +7,6 @@
         public void PlayerJump();
         public void PlayerCrouch();
         public void PlayerMelee();
+        public void PlayerAttack();
     }
 }
