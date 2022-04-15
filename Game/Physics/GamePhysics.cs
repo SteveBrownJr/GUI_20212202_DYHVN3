@@ -10,7 +10,6 @@ namespace Game.Physics
     public class GamePhysics
     {
         List<IEntity> entitys;
-
         public GamePhysics(List<IEntity> entitys)
         {
             this.entitys = entitys;
