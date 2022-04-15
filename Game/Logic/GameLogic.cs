@@ -44,8 +44,8 @@ namespace Game.Logic
             entitys.Add(new Player(map,"Player",
                 0,
                 "TheOnlyOnePlayer",
-                200,
-                200,
+                50,
+                480,
                 Path.Combine("Graphics","Player","player.png")
                 ));
         }
@@ -55,15 +55,24 @@ namespace Game.Logic
         }
         public void PlayerMoveLeft()
         {
-            entitys[0].X--;
+            if ((entitys[0].X - 4) >= map.LeftCorner)
+            {
+                entitys[0].X = entitys[0].X - 4;
+            }            
         }
         public void PlayerMoveRight()
         {
-            entitys[0].X++;
+            if ((entitys[0].X + 4) <= map.RightCorner - 90)
+            {
+                entitys[0].X = entitys[0].X + 4;
+            }            
         }
         public void PlayerJump()
         {
-            entitys[0].Y-=20;
+            if (entitys[0].standing_on_the_ground)
+            {
+                entitys[0].Y -= 80;
+            }            
         }
         public void PlayerCrouch()
         {

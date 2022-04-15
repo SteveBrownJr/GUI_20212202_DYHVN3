@@ -32,7 +32,7 @@ namespace Game
 
             DispatcherTimer dt = new DispatcherTimer();
 
-            dt.Interval = TimeSpan.FromSeconds(0.125);
+            dt.Interval = TimeSpan.FromSeconds(0.0625);
 
             dt.Tick += (sender, args) =>
             {

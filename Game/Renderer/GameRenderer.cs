@@ -17,7 +17,7 @@ namespace Game.Renderer
     {
         IGameModel model;
         IGameControl control;
-        Size size;
+        public Size size;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
         Player player => model.GetPlayer();
         Brush PlayerBrush => player!=null ? new ImageBrush(new BitmapImage(new Uri(player.TexturePath, UriKind.RelativeOrAbsolute))) : null;
@@ -56,6 +56,7 @@ namespace Game.Renderer
         public void Resize(Size size)
         {
             this.size = size;
+            this.InvalidateVisual();
         }
         protected override void OnRender(DrawingContext drawingContext)
         {
@@ -66,7 +67,7 @@ namespace Game.Renderer
             {
             
                 drawingContext.DrawRectangle(WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
-                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));             
+                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, size.Width / 15, size.Height / 8));
             }
         }
     }

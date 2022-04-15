@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Renderer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,8 +18,11 @@ namespace Game.Models
         public string LevelPath { get { return levelPath; } }
         public Map(int id)
         {
-            this.levelPath = Path.Combine("Graphics", "wagons", "wagon" + id + ".png");
-            Floor = 300;
+            this.levelPath = Path.Combine("Graphics", "levels", "level" + id + ".png");
+            Floor = 480;
+            LeftCorner = 40;
+            RightCorner = 1310;
+            Ceiling = 300;
         }
     }
 }

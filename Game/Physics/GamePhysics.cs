@@ -21,19 +21,19 @@ namespace Game.Physics
             {
                 if (!entitys[i].standing_on_the_ground)
                 {
-                    entitys[i].Y += 1;
+                    entitys[i].Y += 4;
                     if (!entitys[i].standing_on_the_ground)
                     {
-                        entitys[i].Y += 1;
+                        entitys[i].Y += 4;
                         if (!entitys[i].standing_on_the_ground)
                         {
-                            entitys[i].Y += 1;
+                            entitys[i].Y += 4;
                             if (!entitys[i].standing_on_the_ground)
                             {
-                                entitys[i].Y += 1;
+                                entitys[i].Y += 4;
                                 if (!entitys[i].standing_on_the_ground)
                                 {
-                                    entitys[i].Y += 1;
+                                    entitys[i].Y += 4;
                                 }
                             }
                         }

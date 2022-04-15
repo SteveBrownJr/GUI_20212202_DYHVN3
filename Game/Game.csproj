@@ -21,9 +21,13 @@
     <None Remove="Graphics\health\20of30hearts.png" />
     <None Remove="Graphics\health\25of30hearts.png" />
     <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\levels\level0.png" />
+    <None Remove="Graphics\levels\level1.png" />
+    <None Remove="Graphics\levels\level2.png" />
+    <None Remove="Graphics\other\barell.png" />
+    <None Remove="Graphics\other\chest.png" />
     <None Remove="Graphics\Player\player.png" />
-    <None Remove="Graphics\wagons\wagon.png" />
-    <None Remove="Graphics\wagons\wagon0.png" />
+    <None Remove="Graphics\levels\wagon.png" />
     <None Remove="WagonDefinitions.xml" />
   </ItemGroup>
 
@@ -67,10 +71,22 @@
     <Content Include="Graphics\health\30of30hearts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\Player\player.png">
+    <Content Include="Graphics\levels\level0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\wagons\wagon0.png">
+    <Content Include="Graphics\levels\level1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\levels\level2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\other\barell.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\other\chest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="WagonDefinitions.xml">
