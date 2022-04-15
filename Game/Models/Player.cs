@@ -20,7 +20,19 @@ namespace Game.Models
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
         public int X { get => x; set => x=value; }
-        public int Y { get => y; set => y = value; }
+        public int Y { get {
+                lock (lockforY)
+                {
+                    return y;
+                }
+            } set {
+                lock (lockforY)
+                {
+                    y = value;
+                }
+            } 
+        } //szállbiztossá akartam tenni, hogy ha egyszerre húzná le a fizika és írná ki a Renderer akkor ütköznének. Így nem fognak
+        static object lockforY = new object();
         public string TexturePath { get => texturePath; set => texturePath=value; }
         public bool standing_on_the_ground { get => m.Floor == this.Y; }
 
