@@ -10,7 +10,6 @@ namespace Game.Physics
     public class GamePhysics
     {
         List<IEntity> entitys;
-
         public GamePhysics(List<IEntity> entitys)
         {
             this.entitys = entitys;
@@ -19,26 +18,16 @@ namespace Game.Physics
         {
             for (int i = 0; i < entitys.Count; i++)
             {
-                if (!entitys[i].standing_on_the_ground)
-                {
-                    entitys[i].Y += 4;
-                    if (!entitys[i].standing_on_the_ground)
+                    for (int j = 1; j <= (int)(entitys[i].TimeSinceFall); j++)
                     {
-                        entitys[i].Y += 4;
-                        if (!entitys[i].standing_on_the_ground)
+                        if (entitys[i].standing_on_the_ground)
                         {
-                            entitys[i].Y += 4;
-                            if (!entitys[i].standing_on_the_ground)
-                            {
-                                entitys[i].Y += 4;
-                                if (!entitys[i].standing_on_the_ground)
-                                {
-                                    entitys[i].Y += 4;
-                                }
-                            }
+                            entitys[i].TimeSinceFall = 0;
+                            break;
                         }
+                        entitys[i].Y += 1;
                     }
-                }
+                    entitys[i].TimeSinceFall++;
             }
         }
     }

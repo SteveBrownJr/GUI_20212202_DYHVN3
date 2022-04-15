@@ -23,9 +23,12 @@ namespace Game.Models
         public int Y { get => y; set => y = value; }
         public string TexturePath { get => texturePath; set => texturePath=value; }
         public bool standing_on_the_ground { get => m.Floor == this.Y; }
+        public int TimeSinceFall { get => timeSinceFall; set => timeSinceFall = value; }
+        int timeSinceFall;
 
         public Player(Map m,string _name, int _id, string _description, int _x, int _y, string _texturePath)
         {
+            timeSinceFall = 0;
             this.m = m;
             Name = _name;
             Id = _id;
