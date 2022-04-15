@@ -14,32 +14,42 @@ namespace Game.Physics
         public GamePhysics(List<IEntity> entitys)
         {
             this.entitys = entitys;
+            
         }
-        public void Step()
+        public void Start()
         {
-            for (int i = 0; i < entitys.Count; i++)
+            new Task(() =>
             {
-                if (!entitys[i].standing_on_the_ground)
+                while (true)
                 {
-                    entitys[i].Y += 4;
-                    if (!entitys[i].standing_on_the_ground)
+                    System.Threading.Thread.Sleep(100);
+                    for (int h = 0; h < 8; h++)
                     {
-                        entitys[i].Y += 4;
-                        if (!entitys[i].standing_on_the_ground)
+                        if (!entitys[0].standing_on_the_ground)
                         {
-                            entitys[i].Y += 4;
+                            entitys[0].Y += 1;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    for (int i = 1; i < entitys.Count; i++)
+                    {
+                        for (int h = 0; h < 8; h++)
+                        {
                             if (!entitys[i].standing_on_the_ground)
                             {
-                                entitys[i].Y += 4;
-                                if (!entitys[i].standing_on_the_ground)
-                                {
-                                    entitys[i].Y += 4;
-                                }
+                                entitys[i].Y += 1;
+                            }
+                            else
+                            {
+                                break;
                             }
                         }
                     }
                 }
-            }
+            }).Start();//Ez érdekes, nem kell lock mert ugyebár máskor nem férünk hozzá az Y-hoz.
         }
     }
 }

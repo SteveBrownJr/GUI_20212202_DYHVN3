@@ -32,11 +32,10 @@ namespace Game
 
             DispatcherTimer dt = new DispatcherTimer();
 
-            dt.Interval = TimeSpan.FromSeconds(0.0625);
+            dt.Interval = TimeSpan.FromSeconds(0.04);//Ez 25 FPS-t tesz ki
 
             dt.Tick += (sender, args) =>
             {
-                logic.TimeStep();
                 renderer.InvalidateVisual();
             };
 

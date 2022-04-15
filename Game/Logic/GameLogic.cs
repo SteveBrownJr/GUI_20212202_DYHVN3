@@ -48,10 +48,7 @@ namespace Game.Logic
                 480,
                 Path.Combine("Graphics","Player","player.png")
                 ));
-        }
-        public void TimeStep()
-        {
-            physics.Step();
+            physics.Start();
         }
         public void PlayerMoveLeft()
         {
@@ -71,7 +68,7 @@ namespace Game.Logic
         {
             if (entitys[0].standing_on_the_ground)
             {
-                entitys[0].Y -= 80;
+                entitys[0].Y -= 120;
             }            
         }
         public void PlayerCrouch()
