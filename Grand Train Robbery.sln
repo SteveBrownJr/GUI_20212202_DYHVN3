@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32319.34
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{0DFFAB5A-D02C-4B5E-AB68-15425D7C64A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTrainRobbery.Data", "GrandTrainRobbery.Data\GrandTrainRobbery.Data.csproj", "{20A62C83-E296-47A4-8CAA-C07E2EFE2F00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTrainRobbery.Models", "GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj", "{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0DFFAB5A-D02C-4B5E-AB68-15425D7C64A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DFFAB5A-D02C-4B5E-AB68-15425D7C64A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DFFAB5A-D02C-4B5E-AB68-15425D7C64A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A62C83-E296-47A4-8CAA-C07E2EFE2F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A62C83-E296-47A4-8CAA-C07E2EFE2F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A62C83-E296-47A4-8CAA-C07E2EFE2F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A62C83-E296-47A4-8CAA-C07E2EFE2F00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
