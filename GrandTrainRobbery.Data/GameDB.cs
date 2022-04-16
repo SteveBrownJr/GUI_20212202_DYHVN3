@@ -21,7 +21,7 @@ namespace GrandTrainRobbery.Data
             XElement WagonDefinition = XDocument.Load("WagonDefinitions.xml").Root.Elements("wagon").First(t=>t.Attribute("level").Value==lvl.ToString());
             wagon = new Map(WagonDefinition.Element("Map"));
             player = new Player(wagon,WagonDefinition.Element("Player"));
-            player.ActualHp = 15;
+            player.ActualHp = 30;
             //Entitások nem kerülnek példányosításra
         }
     }
