@@ -26,7 +26,12 @@ namespace GrandTrainRobbery.Models
         }
         public Map(XElement MapX)
         {
-            levelPath=MapX.Element()
+            levelPath = MapX.Element("MainTexture").Value;
+            Ceiling = int.Parse(MapX.Element("Celling").Value);
+            Floor = int.Parse(MapX.Element("Floor").Value);
+            LeftCorner = int.Parse(MapX.Element("LeftCorner").Value);
+            RightCorner = int.Parse(MapX.Element("RightCorner").Value);
         }
     }
+
 }

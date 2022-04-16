@@ -34,7 +34,14 @@ namespace GrandTrainRobbery.Tester
         [Test]
         public static void MapInstatiation()
         {
-            Assert.That(true);
+            GameDB testableDB = new GameDB(0);
+            Map m = testableDB.GetWagon;
+            Assert.That(
+                m.Ceiling==0&&
+                m.Floor==100&&
+                m.LeftCorner==0&&
+                m.RightCorner==100&&
+                m.LevelPath== "CorrectTexture");
         }
     }
 }
