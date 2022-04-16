@@ -62,7 +62,7 @@ namespace GrandTrainRobbery.Physics
                 e.Y -= 80;
                 e.Jump = false;
             }
-            if (e.MoveRight && e.X < m.RightCorner-20)
+            if (e.MoveRight && e.X < m.RightCorner-90)
             {
                 e.X += 20;
                 e.MoveRight = false;
