@@ -4,15 +4,32 @@ using System.Collections.Generic;
 
 namespace GrandTrainRobbery.Physics
 {
-    public class GamePhysics
+    public static class GamePhysics
     {
-        List<IEntity> entitys;
-
-        public GamePhysics(List<IEntity> entitys)
+        public static void Gravity(Player p)
         {
-            this.entitys = entitys;
+            if (!p.standing_on_the_ground)
+            {
+                p.Y += 4;
+                if (!p.standing_on_the_ground)
+                {
+                    p.Y += 4;
+                    if (!p.standing_on_the_ground)
+                    {
+                        p.Y += 4;
+                        if (!p.standing_on_the_ground)
+                        {
+                            p.Y += 4;
+                            if (!p.standing_on_the_ground)
+                            {
+                                p.Y += 4;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        public void Step()
+        public static void Gravity(List<IEntity> entitys)
         {
             for (int i = 0; i < entitys.Count; i++)
             {
@@ -36,6 +53,24 @@ namespace GrandTrainRobbery.Physics
                         }
                     }
                 }
+            }
+        }
+        public static void Move(IEntity e,Map m)
+        {
+            if (e.Jump && e.standing_on_the_ground)
+            {
+                e.Y -= 80;
+                e.Jump = false;
+            }
+            if (e.MoveRight && e.X < m.RightCorner)
+            {
+                e.X += 20;
+                e.MoveRight = false;
+            }
+            if (e.MoveLeft && e.X > m.LeftCorner)
+            {
+                e.X -= 20;
+                e.MoveLeft = false;
             }
         }
     }

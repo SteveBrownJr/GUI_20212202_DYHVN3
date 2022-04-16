@@ -30,8 +30,17 @@ namespace GrandTrainRobbery.Models
         public int X { get => x; set => x = value; }
         public int Y { get => y; set => y = value; }
         public bool standing_on_the_ground { get => m.Floor == this.Y; }
+        public XElement source { get; }
+        public Map M { get; }
+        public bool MoveLeft {get;set;}
+        public bool MoveRight { get; set; }
+        public bool Jump { get; set; }
+        public bool Chrouch { get; set; }
+
         public Player(Map _m, XElement PlayerXElement)
         {
+            source = PlayerXElement;
+            M = _m;
             m = _m;
             Name = PlayerXElement.Element("Name").Value;
             id = int.Parse(PlayerXElement.Element("Id").Value);
@@ -42,16 +51,23 @@ namespace GrandTrainRobbery.Models
             attackTexturePath = PlayerXElement.Element("RangedAttack").Value;
             chrouchTexturePath = PlayerXElement.Element("ChrouchTexture").Value;
             meleeTexturePath = PlayerXElement.Element("MeleeAttack").Value;
+            
+            MoveLeft = false;
+            MoveRight = false;
+            Jump = false;
+            Chrouch = false;
         }
-        public Player(Map m, string _name, int _id, string _description, int _x, int _y, string _texturePath)
+
+        public static Player GetCopy(Player old)
         {
-            this.m = m;
-            Name = _name;
-            Id = _id;
-            Description = _description;
-            X = _x;
-            Y = _y;
-            texturePath = _texturePath;
+            Player p = new Player(old.M, old.source);
+            p.X = old.X;
+            p.Y = old.Y;
+            p.MoveLeft = false;
+            p.MoveRight = false;
+            p.Jump = false;
+            p.Chrouch = false;
+            return p;
         }
         public void MeleeAttack()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrandTrainRobbery.Models
 {
-    public class MOB : IEntity
+    public class MOB 
     {
         string name;
         int id;

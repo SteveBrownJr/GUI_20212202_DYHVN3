@@ -22,13 +22,15 @@ namespace Game
     /// </summary>
     public partial class MainWindow : Window
     {
-        GameLogic logic;
+        IGameControl control;
+        List<Key> ActiveButtons;
         public MainWindow(int lvl)
         {
             InitializeComponent();
+            ActiveButtons = new List<Key>();
 
-            logic = new GameLogic(lvl);
-            renderer.SetupLogic(logic);
+            control = new GameLogic(lvl);
+            renderer.SetupLogic(control as GameLogic);
 
             DispatcherTimer dt = new DispatcherTimer();
 
@@ -36,52 +38,46 @@ namespace Game
 
             dt.Tick += (sender, args) =>
             {
-                logic.TimeStep();
                 renderer.InvalidateVisual();
+
+                List<Movements> MV = new List<Movements>();
+                foreach (Key item in ActiveButtons)
+                {
+                    if (item==Key.A)
+                    {
+                        MV.Add(Movements.LEFT);
+                    }
+                    else if (item == Key.S)
+                    {
+                        MV.Add(Movements.DOWN);
+                    }
+                    else if (item == Key.D)
+                    {
+                        MV.Add(Movements.RIGHT);
+                    }
+                    else if (item== Key.W)
+                    {
+                        MV.Add(Movements.UP);
+                    }
+                }
+
+                control.MovementButtonsDown(MV);
             };
 
             dt.Start();
         }
-        
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
+            if (!ActiveButtons.Contains(e.Key))
             {
-                case Key.A:
-                    {
-                        renderer.PlayerControl(Renderer.controls.LEFT);
-                    }break;
-                    
-                case Key.W:
-                    {
-                        renderer.PlayerControl(Renderer.controls.UP);
-                    }
-                    break;
-                case Key.S:
-                    {
-                        renderer.PlayerControl(Renderer.controls.DOWN);
-                    }
-                    break;
-                case Key.D:
-                    {
-                        renderer.PlayerControl(Renderer.controls.RIGHT);
-                    }
-                    break;
-                case Key.Space:
-                    {
-                        renderer.PlayerControl(Renderer.controls.MELEE);
-                    }
-                    break;
-                case Key.LeftShift:
-                    {
-                        renderer.PlayerControl(Renderer.controls.ATTACK);
-                    }
-                    ;break;
-                default:
-                    {
-                        //Nem csinálunk semmmit :)
-                    }
-                    break;
+                ActiveButtons.Add(e.Key);
+            }
+        }
+        private void OnKeyUpHandler(object sender, KeyEventArgs e)
+        {
+            if (ActiveButtons.Contains(e.Key))
+            {
+                ActiveButtons.Remove(e.Key);
             }
         }
 

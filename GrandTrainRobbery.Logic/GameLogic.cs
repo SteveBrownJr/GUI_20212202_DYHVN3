@@ -12,6 +12,11 @@ namespace GrandTrainRobbery.Logic
 {
     public class GameLogic : IGameModel, IGameControl
     {
+        static object Movementlock = new object();
+        static object PlayerDataLock = new object();
+        static object EntityDataLock = new object();
+
+        List<Movements> PlayerMovements;
         int _lvl;
         GameDB Data;
         public string GetLevelPath()
@@ -20,52 +25,88 @@ namespace GrandTrainRobbery.Logic
         }
         public Player GetPlayer()
         {
-            return Data.GetPlayer;
+            Player p = null;
+            lock (PlayerDataLock)
+            {
+                p = Data.GetCopyPlayer;
+            }
+            return p;
         }
         public IEnumerable<IEntity> GetEntities()
         {
-            return Data.GetEntitys;
+            IEnumerable<IEntity> ie = null;
+            lock (EntityDataLock)
+            {
+                ie = Data.GetCopyEntitys;
+            }
+            return ie;
         }
         public GameLogic(int lvl)
         {
+            PlayerMovements = new List<Movements>();
             _lvl = lvl;
             Data = new GameDB(lvl);
-        }
-        public void TimeStep()
-        {
-        }
-        public void PlayerMoveLeft()
-        {
-            if ((Data.GetPlayer.X - 4) >= Data.GetWagon.LeftCorner)
-            {
-                Data.GetPlayer.X = Data.GetPlayer.X - 4;
-            }
-        }
-        public void PlayerMoveRight()
-        {
-            if ((Data.GetPlayer.X + 4) <= Data.GetWagon.RightCorner - 90)
-            {
-                Data.GetPlayer.X = Data.GetPlayer.X + 4;
-            }
-        }
-        public void PlayerJump()
-        {
-            if (Data.GetPlayer.standing_on_the_ground)
-            {
-                Data.GetPlayer.Y -= 80;
-            }
-        }
-        public void PlayerCrouch()
-        {
 
-        }
-        public void PlayerMelee()
-        {
+            new Task(() =>
+            {
+                while (true)
+                {
+                    System.Threading.Thread.Sleep(100);
+                    lock (EntityDataLock)
+                    {
+                        //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
+                    }
+                    lock (PlayerDataLock)
+                    {
+                        GamePhysics.Move(Data.GetPlayer,Data.GetWagon);
+                        GamePhysics.Gravity(Data.GetPlayer);
+                    }
 
+                }
+            },TaskCreationOptions.LongRunning).Start();
+            new Task(() =>
+            {
+                while (true)
+                {
+                    System.Threading.Thread.Sleep(62);
+                    lock (Movementlock)
+                    {
+                        lock (PlayerDataLock)
+                        {
+                            foreach (Movements move in PlayerMovements)
+                            {
+                                switch (move)
+                                {
+                                    case Movements.LEFT:
+                                        Data.GetPlayer.MoveLeft = true;
+                                        break;
+                                    case Movements.RIGHT:
+                                        Data.GetPlayer.MoveRight = true;
+                                        break;
+                                    case Movements.UP:
+                                        Data.GetPlayer.Jump = true;
+                                        break;
+                                    case Movements.DOWN:
+                                        Data.GetPlayer.Chrouch = true;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }, TaskCreationOptions.LongRunning).Start();
         }
-        public void PlayerAttack()
+        public void MovementButtonsDown(List<Movements> Buttons)
         {
-
+            new Task(() =>
+            {
+                lock (Movementlock)
+                {
+                    PlayerMovements = Buttons;
+                }
+            },TaskCreationOptions.LongRunning).Start();
         }
     }
 }
