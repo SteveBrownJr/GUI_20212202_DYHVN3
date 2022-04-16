@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrandTrainRobbery.Logic
 {
-    internal interface IGameModel
+    public interface IGameModel
     {
         public string GetLevelPath();
         public Player GetPlayer();

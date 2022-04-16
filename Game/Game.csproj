@@ -28,7 +28,6 @@
     <None Remove="Graphics\other\chest.png" />
     <None Remove="Graphics\Player\player.png" />
     <None Remove="Graphics\levels\wagon.png" />
-    <None Remove="WagonDefinitions.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,12 +88,10 @@
     <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="WagonDefinitions.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GrandTrainRobbery.Logic\GrandTrainRobbery.Logic.csproj" />
     <ProjectReference Include="..\GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj" />
   </ItemGroup>
 
