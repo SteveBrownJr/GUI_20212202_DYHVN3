@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace GrandTrainRobbery.Models
 {
@@ -22,6 +23,10 @@ namespace GrandTrainRobbery.Models
             LeftCorner = 40;
             RightCorner = 1310;
             Ceiling = 300;
+        }
+        public Map(XElement MapX)
+        {
+            levelPath=MapX.Element()
         }
     }
 }

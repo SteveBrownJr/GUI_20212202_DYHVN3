@@ -1,4 +1,5 @@
 ﻿using GrandTrainRobbery.Data;
+using GrandTrainRobbery.Models;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,25 @@ namespace GrandTrainRobbery.Tester
         public static void PlayerInstatiation()
         {
             GameDB testableDB = new GameDB(0);
-            Console.WriteLine(testableDB.GetPlayer);
+            Player p = testableDB.GetPlayer;
+            Assert.That(p.Name == "CorrectName" &&
+                p.Id == 0 &&
+                p.Description == "CorrectDescription" &&
+                p.ChrouchTexturePath == "CorrectChrouchTexture"&&
+                p.TexturePath == "CorrectTexture"&&
+                p.MeleeTexturePath=="CorrectMeleeAttack"&&
+                p.AttackTexturePath=="CorrectRangedAttack"&&
+                p.X==-1 &&
+                p.Y==-1 &&
+                p.Name=="CorrectName"
+                );
+               
             
+        }
+        [Test]
+        public static void MapInstatiation()
+        {
+            Assert.That(true);
         }
     }
 }

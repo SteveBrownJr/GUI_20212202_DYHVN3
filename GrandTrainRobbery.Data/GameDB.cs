@@ -15,8 +15,8 @@ namespace GrandTrainRobbery.Data
         public GameDB(int lvl) 
         {
             XElement WagonDefinition = XDocument.Load("WagonDefinitions.xml").Root.Elements("wagon").First(t=>t.Attribute("level").Value==lvl.ToString());
-
-            player = new Player(WagonDefinition.Element("Player"));
+            wagon = new Map(WagonDefinition.Element("Map"));
+            player = new Player(wagon,WagonDefinition.Element("Player"));
         }
     }
 }

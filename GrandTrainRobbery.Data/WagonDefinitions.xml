@@ -2,10 +2,13 @@
 <wagons>
 	<wagon level="0">
 		<Player>
+			<Id>0</Id>
 			<Name>CorrectName</Name>
 			<CalmTexture>CorrectTexture</CalmTexture>
 			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
-			<RangedAttack></RangedAttack>
+			<RangedAttack>CorrectRangedAttack</RangedAttack>
+			<ChrouchTexture>CorrectChrouchTexture</ChrouchTexture>
+			<Description>CorrectDescription</Description>
 			<X>-1</X>
 			<Y>-1</Y>
 		</Player>
@@ -13,7 +16,8 @@
 			<MainTexture>CorrectTexture</MainTexture>
 			<Celling>0</Celling>
 			<Floor>100</Floor>
-			<Left
+			<LeftCorner>0</LeftCorner>
+			<RightCorner>100</RightCorner>
 		</Map>
 		<Entitys>
 			
