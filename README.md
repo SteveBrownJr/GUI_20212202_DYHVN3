@@ -13,6 +13,6 @@ OnRender -- ezeket a metódusokat hívja a mozgatáshoz --> IGameControl
 Logic -- megmondja neki melyik szint kell --> Data
 IGameModel((IGameModel)) --> Logic
 Physics[Physics] --> Logic
-IGameModel -- innen szerzi a megjelenítendő cuccokat--> OnRender
+IGameModel -- innen szerzi a megjelenítendő cuccokat --> OnRender
 OnRender -- a szint számával példányosítja a Logicot --> Logic
 ```
