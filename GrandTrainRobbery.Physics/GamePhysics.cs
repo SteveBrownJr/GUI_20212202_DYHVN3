@@ -6,27 +6,20 @@ namespace GrandTrainRobbery.Physics
 {
     public static class GamePhysics
     {
+        static Stopper s = new Stopper();
         public static void Gravity(Player p)
         {
+            for (int i = 0; i < 10; i++)
+            {
             if (!p.standing_on_the_ground)
             {
-                p.Y += 1;
-                if (!p.standing_on_the_ground)
-                {
-                    p.Y += 1;
-                    if (!p.standing_on_the_ground)
-                    {
-                        p.Y += 1;
-                        if (!p.standing_on_the_ground)
-                        {
-                            p.Y += 1;
-                            if (!p.standing_on_the_ground)
-                            {
-                                p.Y += 1;
-                            }
-                        }
-                    }
-                }
+                p.Y += 1*s.Seconds();
+            }
+            else
+            {
+                s.Reset();
+                break;
+            }
             }
         }
         public static void Gravity(List<IEntity> entitys)
