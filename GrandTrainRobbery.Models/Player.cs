@@ -19,8 +19,11 @@ namespace GrandTrainRobbery.Models
         string meleeTexturePath;
         string attackTexturePath;
         string chrouchTexturePath;
-
+        string jumpTexturePath;
+        string runTexturePath;
         public string TexturePath { get => texturePath; }
+        public string RunTexturePath { get => runTexturePath; }
+        public string JumpTexturePath { get => jumpTexturePath; }
         public string MeleeTexturePath { get => meleeTexturePath; }
         public string AttackTexturePath { get => attackTexturePath; }
         public string ChrouchTexturePath { get => chrouchTexturePath; }
@@ -51,7 +54,10 @@ namespace GrandTrainRobbery.Models
             attackTexturePath = PlayerXElement.Element("RangedAttack").Value;
             chrouchTexturePath = PlayerXElement.Element("ChrouchTexture").Value;
             meleeTexturePath = PlayerXElement.Element("MeleeAttack").Value;
-            
+            jumpTexturePath = PlayerXElement.Element("JumpTexture").Value;
+            runTexturePath = PlayerXElement.Element("RunTexture").Value;
+
+
             MoveLeft = false;
             MoveRight = false;
             Jump = false;

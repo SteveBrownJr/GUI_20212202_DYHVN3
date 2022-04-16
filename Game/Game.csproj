@@ -27,9 +27,9 @@
     <None Remove="Graphics\Menu\menu.png" />
     <None Remove="Graphics\other\barell.png" />
     <None Remove="Graphics\other\chest.png" />
-    <None Remove="Graphics\Player\Player-CALM.gif" />
     <None Remove="Graphics\Player\player.png" />
     <None Remove="Graphics\levels\wagon.png" />
+    <None Remove="Graphics\Player\Player_CALM.gif" />
     <None Remove="Graphics\Player\Player_JUMP.gif" />
     <None Remove="Graphics\Player\Player_MELEE.gif" />
     <None Remove="Graphics\Player\Player_RUN.gif" />
@@ -95,7 +95,7 @@
     <Content Include="Graphics\other\chest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\Player\Player-CALM.gif">
+    <Content Include="Graphics\Player\Player_CALM.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\Player\player.png">
