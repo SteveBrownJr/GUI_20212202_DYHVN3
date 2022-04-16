@@ -69,7 +69,6 @@ namespace GrandTrainRobbery.Physics
                 e.X -= 20;
                 e.MoveLeft = false;
             }
-            
         }
     }
 }

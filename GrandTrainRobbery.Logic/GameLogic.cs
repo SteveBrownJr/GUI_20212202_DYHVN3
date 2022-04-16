@@ -30,7 +30,7 @@ namespace GrandTrainRobbery.Logic
             Player p = null;
             lock (PlayerDataLock)
             {
-                p = Data.GetCopyPlayer;
+                p = Data.GetPlayer;
             }
             return p;
         }

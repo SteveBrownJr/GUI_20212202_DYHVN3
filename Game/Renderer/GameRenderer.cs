@@ -46,7 +46,7 @@ namespace Game.Renderer
                 if (player.X > 1360 - 91 - 50)
                 {
                     drawingContext.DrawRectangle(WagonBrush, null, new Rect(0-(wagonview+=5), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X-=2, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X--, player.Y, 90, 90));
                 }
                 else
                 {
