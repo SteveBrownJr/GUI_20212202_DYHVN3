@@ -94,4 +94,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj" />
+  </ItemGroup>
+
 </Project>

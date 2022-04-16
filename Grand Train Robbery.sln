@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTrainRobbery.Data", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTrainRobbery.Models", "GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj", "{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrandTrainRobbery.Physics", "GrandTrainRobbery.Physics\GrandTrainRobbery.Physics.csproj", "{80EED018-E0A8-41E5-AFD1-01DC0F3ED00A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9376BA3-8944-4165-88E3-AED6D4EE3B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80EED018-E0A8-41E5-AFD1-01DC0F3ED00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80EED018-E0A8-41E5-AFD1-01DC0F3ED00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80EED018-E0A8-41E5-AFD1-01DC0F3ED00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80EED018-E0A8-41E5-AFD1-01DC0F3ED00A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
