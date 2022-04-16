@@ -1,16 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <wagons>
-	<wagon id="1">
+	<wagon level="0">
+		<Player>
+			<Name>CorrectName</Name>
+			<CalmTexture>CorrectTexture</CalmTexture>
+			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
+			<RangedAttack></RangedAttack>
+			<X>-1</X>
+			<Y>-1</Y>
+		</Player>
+		<Map>
+			<MainTexture>CorrectTexture</MainTexture>
+			<Celling>0</Celling>
+			<Floor>100</Floor>
+			<Left
+		</Map>
+		<Entitys>
+			
+		</Entitys>
+		
+	</wagon>
+	<wagon level="1">
 		<Player>
 			<DefaultTexture>player.png</DefaultTexture>
 			<MeeleeTexture></MeeleeTexture>
 			<RangedAttackTexture></RangedAttackTexture>
 			<Spawn>200,200</Spawn>
 		</Player>
-		<XMIN></XMIN>
-		<YMIN></YMIN>
-		<XMAX></XMAX>
-		<YMAX></YMAX>
 	</wagon>
 	
 </wagons>

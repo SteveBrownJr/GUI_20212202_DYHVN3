@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace GrandTrainRobbery.Models
 {
@@ -34,11 +35,20 @@ namespace GrandTrainRobbery.Models
             Y = _y;
             TexturePath = _texturePath;
         }
+        public Player(XElement PlayerXElement)
+        {
+            m = null;
+            Name = PlayerXElement.Element("Name").Value;
+            id = -1;
+            description = null;
+            x = 0;
+            y = 0;
+            texturePath = "none";
+        }
         public void MeleeAttack()
         {
             throw new NotImplementedException();
         }
-
         public void RangedAttack()
         {
             throw new NotImplementedException();

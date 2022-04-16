@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GrandTrainRobbery.Data\GrandTrainRobbery.Data.csproj" />
     <ProjectReference Include="..\GrandTrainRobbery.Physics\GrandTrainRobbery.Physics.csproj" />
   </ItemGroup>
 
