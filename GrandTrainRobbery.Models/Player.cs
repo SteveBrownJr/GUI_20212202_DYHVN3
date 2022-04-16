@@ -9,6 +9,8 @@ namespace GrandTrainRobbery.Models
 {
     public class Player : IEntity
     {
+        int actualhp;
+        int maxhp;
         string name;
         int id;
         int x;
@@ -36,9 +38,13 @@ namespace GrandTrainRobbery.Models
         public bool MoveRight { get; set; }
         public bool Jump { get; set; }
         public bool Chrouch { get; set; }
+        public int ActualHp { get { return this.actualhp; } }
+        public int MaxHp { get { return this.maxhp; } }
 
         public Player(Map _m, XElement PlayerXElement)
         {
+            actualhp = 30;
+            maxhp = 30;
             source = PlayerXElement;
             M = _m;
             m = _m;

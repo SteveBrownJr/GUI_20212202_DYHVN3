@@ -20,6 +20,8 @@ namespace Game.Renderer
         public Size size;
         int wagonview;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
+
+        Brush HeartBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "health", "30of30hearts.png"), UriKind.RelativeOrAbsolute)));
         Player player => model.GetPlayer();
         Brush PlayerBrush => player!=null ? new ImageBrush(new BitmapImage(new Uri(player.TexturePath, UriKind.RelativeOrAbsolute))) : null;
         public void SetupLogic(GameLogic logic)
@@ -40,18 +42,19 @@ namespace Game.Renderer
             
             base.OnRender(drawingContext);
             
-            
             if (player != null && model != null && size.Width > 50 && size.Height > 50)
             {
-                if (player.X > 1360 - 91 - 50)
-                {
+                if (player.X > 1360 - 91 - 50 && (control as GameLogic).LVL != 1)
+                {                    
                     drawingContext.DrawRectangle(WagonBrush, null, new Rect(0-(wagonview+=5), 0, size.Width, size.Height));
                     drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X--, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270/1.5, 89/1.5));
                 }
                 else
-                {
+                {                    
                     drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
                     drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270/1.5, 89/1.5));
                 }                
             }
             
