@@ -5,6 +5,8 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <StartupObject>Game.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +23,7 @@
     <None Remove="Graphics\health\20of30hearts.png" />
     <None Remove="Graphics\health\25of30hearts.png" />
     <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\icon.ico" />
     <None Remove="Graphics\levels\level0.png" />
     <None Remove="Graphics\levels\level1.png" />
     <None Remove="Graphics\levels\level2.png" />
@@ -30,11 +33,47 @@
     <None Remove="Graphics\Player\player.png" />
     <None Remove="Graphics\levels\wagon.png" />
     <None Remove="Graphics\Player\Player_CALM.gif" />
+    <None Remove="Graphics\Player\Player_CALM\Player_CALM.gif" />
     <None Remove="Graphics\Player\Player_JUMP.gif" />
+    <None Remove="Graphics\Player\Player_JUMP\frame_0_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_JUMP\frame_1_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_JUMP\frame_2_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_JUMP\frame_3_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_JUMP\frame_4_delay-0.08s.gif" />
     <None Remove="Graphics\Player\Player_MELEE.gif" />
+    <None Remove="Graphics\Player\Player_MELEE\frame_0_delay-0.21s.gif" />
+    <None Remove="Graphics\Player\Player_MELEE\frame_1_delay-0.13s.gif" />
+    <None Remove="Graphics\Player\Player_MELEE\frame_2_delay-0.33s.gif" />
     <None Remove="Graphics\Player\Player_RUN.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_00_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_01_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_02_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_03_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_04_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_05_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_06_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_07_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_08_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_09_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_10_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_11_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_12_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_13_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_14_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_RUN\frame_15_delay-0.08s.gif" />
     <None Remove="Graphics\Player\Player_SHOOT.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_00_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_01_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_02_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_03_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_04_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_05_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_06_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_07_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_08_delay-0.08s.gif" />
+    <None Remove="Graphics\Player\Player_SHOOT\frame_09_delay-0.08s.gif" />
     <None Remove="Graphics\Player\Player_STAY.gif" />
+    <None Remove="Graphics\Player\Player_STAY\frame_0_delay-0.33s.gif" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +116,9 @@
     <Content Include="Graphics\health\30of30hearts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\levels\level0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -101,16 +143,121 @@
     <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\Player\Player_CALM\Player_CALM.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\Player\Player_JUMP.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_JUMP\frame_1_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_JUMP\frame_2_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_JUMP\frame_3_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_JUMP\frame_4_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_MELEE\frame_0_delay-0.21s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_MELEE\frame_1_delay-0.13s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_MELEE\frame_2_delay-0.33s.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\Player\Player_RUN.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_00_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_01_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_02_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_03_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_04_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_05_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_06_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_07_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_08_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_09_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_10_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_11_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_12_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_13_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_14_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_RUN\frame_15_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\Player\Player_SHOOT.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_00_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_01_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_02_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_03_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_04_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_05_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_06_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_07_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_08_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_SHOOT\frame_09_delay-0.08s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\Player\Player_STAY.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Player\Player_STAY\frame_0_delay-0.33s.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -126,6 +273,12 @@
 
   <ItemGroup>
     <Content Include="Graphics\Player\Player_MELEE.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphics\Player\Player_JUMP\frame_0_delay-0.08s.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

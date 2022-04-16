@@ -17,18 +17,36 @@ namespace Game.Renderer
     {
         IGameModel model;
         IGameControl control;
+        AnimationManager PlayerAnimationsManager;
         public Size size;
         int wagonview;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
 
         Brush HeartBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "health", $"{player.ActualHp}of30hearts.png"), UriKind.RelativeOrAbsolute)));
         Player player => model.GetPlayer();
-        Brush PlayerBrush => player!=null ? new ImageBrush(new BitmapImage(new Uri(player.TexturePath, UriKind.RelativeOrAbsolute))) : null;
+        Brush PlayerBrush { get
+            {
+                if (!player.standing_on_the_ground)
+                {
+                    return new ImageBrush(PlayerAnimationsManager.GetNextofThis(2));//Ha nem áll a földön akkor ugrik
+                }
+                if (player.MoveLeft || player.MoveRight)
+                {
+                    return new ImageBrush(PlayerAnimationsManager.GetNextofThis(1)); //Ha épp mozog akkor fix mozog
+                }
+                return new ImageBrush(PlayerAnimationsManager.GetNextofThis(0)); //végesetben is megkell jeleníteni valamit
+            } 
+        }
         public void SetupLogic(GameLogic logic)
         {
             this.wagonview = 0;
             this.model = logic;
             this.control = logic;
+            PlayerAnimationsManager = new AnimationManager();
+            PlayerAnimationsManager.Append(player.TexturePath); //0. a nyugodt animáció
+            PlayerAnimationsManager.Append(player.RunTexturePath); //1. a futó animáció
+            PlayerAnimationsManager.Append(player.JumpTexturePath); //2. az ugró animáció
+
         }
 
         

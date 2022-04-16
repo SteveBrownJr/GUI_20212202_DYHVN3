@@ -27,12 +27,12 @@
 		<Player>
 			<Id>1</Id>
 			<Name>TheOnlyOnePlayer</Name>
-			<CalmTexture>Graphics/Player/Player_CALM.gif</CalmTexture>
-			<RunTexture>Graphics/Player/Player_RUN.gif</RunTexture>
-			<JumpTexture>Graphics/Player/Player_JUMP.gif</JumpTexture>
-			<MeleeAttack>Graphics/Player/Player_MELEE.gif</MeleeAttack>
-			<RangedAttack>Graphics/Player/Player_SHOOT.gif</RangedAttack>
-			<ChrouchTexture>Graphics/Player/Player_RUN.gif</ChrouchTexture>
+			<CalmTexture>Graphics/Player/Player_CALM/</CalmTexture>
+			<RunTexture>Graphics/Player/Player_RUN/</RunTexture>
+			<JumpTexture>Graphics/Player/Player_JUMP/</JumpTexture>
+			<MeleeAttack>Graphics/Player/Player_MELEE/</MeleeAttack>
+			<RangedAttack>Graphics/Player/Player_SHOOT/</RangedAttack>
+			<ChrouchTexture>Graphics/Player/Player_RUN/</ChrouchTexture>
 			<Description>The Player</Description>
 			<X>40</X>
 			<Y>480</Y>
@@ -52,12 +52,12 @@
 		<Player>
 			<Id>2</Id>
 			<Name>TheOnlyOnePlayer</Name>
-			<CalmTexture>Graphics/Player/Player_CALM.gif</CalmTexture>
-			<RunTexture>Graphics/Player/Player_RUN.gif</RunTexture>
-			<JumpTexture>Graphics/Player/Player_JUMP.gif</JumpTexture>
-			<MeleeAttack>Graphics/Player/Player_MELEE.gif</MeleeAttack>
-			<RangedAttack>Graphics/Player/Player_SHOOT.gif</RangedAttack>
-			<ChrouchTexture>Graphics/Player/Player_RUN.gif</ChrouchTexture>
+			<CalmTexture>Graphics/Player/Player_CALM/</CalmTexture>
+			<RunTexture>Graphics/Player/Player_RUN/</RunTexture>
+			<JumpTexture>Graphics/Player/Player_JUMP/</JumpTexture>
+			<MeleeAttack>Graphics/Player/Player_MELEE/</MeleeAttack>
+			<RangedAttack>Graphics/Player/Player_SHOOT/</RangedAttack>
+			<ChrouchTexture>Graphics/Player/Player_RUN/</ChrouchTexture>
 			<Description>The Player</Description>
 			<X>40</X>
 			<Y>480</Y>
@@ -77,12 +77,12 @@
 		<Player>
 			<Id>3</Id>
 			<Name>CorrectName</Name>
-			<CalmTexture>Graphics/Player/Player_CALM.gif</CalmTexture>
-			<RunTexture>Graphics/Player/Player_RUN.gif</RunTexture>
-			<JumpTexture>Graphics/Player/Player_JUMP.gif</JumpTexture>
-			<MeleeAttack>Graphics/Player/Player_MELEE.gif</MeleeAttack>
-			<RangedAttack>Graphics/Player/Player_SHOOT.gif</RangedAttack>
-			<ChrouchTexture>Graphics/Player/Player_RUN.gif</ChrouchTexture>
+			<CalmTexture>Graphics/Player/Player_CALM/</CalmTexture>
+			<RunTexture>Graphics/Player/Player_RUN/</RunTexture>
+			<JumpTexture>Graphics/Player/Player_JUMP/</JumpTexture>
+			<MeleeAttack>Graphics/Player/Player_MELEE/</MeleeAttack>
+			<RangedAttack>Graphics/Player/Player_SHOOT/</RangedAttack>
+			<ChrouchTexture>Graphics/Player/Player_RUN/</ChrouchTexture>
 			<Description>_</Description>
 			<X>40</X>
 			<Y>500</Y>
