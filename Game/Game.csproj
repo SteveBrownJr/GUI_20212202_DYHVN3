@@ -5,6 +5,8 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <StartupObject>Game.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +23,7 @@
     <None Remove="Graphics\health\20of30hearts.png" />
     <None Remove="Graphics\health\25of30hearts.png" />
     <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\icon.ico" />
     <None Remove="Graphics\levels\level0.png" />
     <None Remove="Graphics\levels\level1.png" />
     <None Remove="Graphics\levels\level2.png" />
@@ -75,6 +78,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\health\30of30hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\levels\level0.png">
