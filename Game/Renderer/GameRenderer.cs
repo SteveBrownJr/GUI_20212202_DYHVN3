@@ -18,11 +18,13 @@ namespace Game.Renderer
         IGameModel model;
         IGameControl control;
         public Size size;
+        int wagonview;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
         Player player => model.GetPlayer();
         Brush PlayerBrush => player!=null ? new ImageBrush(new BitmapImage(new Uri(player.TexturePath, UriKind.RelativeOrAbsolute))) : null;
         public void SetupLogic(GameLogic logic)
         {
+            this.wagonview = 0;
             this.model = logic;
             this.control = logic;
         }
@@ -38,12 +40,23 @@ namespace Game.Renderer
             
             base.OnRender(drawingContext);
             
-            if (player!=null&&model!=null && size.Width>50 && size.Height>50)
-            {
             
-                drawingContext.DrawRectangle(WagonBrush, null,new Rect(0, 0, size.Width, size.Height));
-                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, size.Width / 15, size.Height / 8));
+            if (player != null && model != null && size.Width > 50 && size.Height > 50)
+            {
+                if (player.X > 1360 - 91 - 50)
+                {
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0-(wagonview+=5), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X-=2, player.Y, 90, 90));
+                }
+                else
+                {
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
+                }                
             }
+            
+
+            
         }
     }
 }

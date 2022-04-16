@@ -89,8 +89,21 @@ namespace Game
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            renderer.Resize(new Size(grid.ActualWidth, grid.ActualHeight));
-            renderer.InvalidateVisual();
+            if ((control as GameLogic).LVL == 1)
+            {
+                renderer.Resize(new Size(grid.ActualWidth, grid.ActualHeight));
+                renderer.InvalidateVisual();
+            }
+            else if ((control as GameLogic).LVL == 2)
+            {
+                renderer.Resize(new Size(2720, grid.ActualHeight));
+                renderer.InvalidateVisual();
+            }
+            else
+            {
+                renderer.Resize(new Size(4080, grid.ActualHeight));
+                renderer.InvalidateVisual();
+            }
         }
     }
 }

@@ -32,7 +32,7 @@
 			<RangedAttack>_</RangedAttack>
 			<ChrouchTexture>_</ChrouchTexture>
 			<Description>_</Description>
-			<X>50</X>
+			<X>40</X>
 			<Y>480</Y>
 		</Player>
 		<Map>
@@ -46,5 +46,50 @@
 
 		</Entitys>
 	</wagon>
-	
+	<wagon level="2">
+		<Player>
+			<Id>2</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>Graphics/Player/player.png</CalmTexture>
+			<MeleeAttack>_</MeleeAttack>
+			<RangedAttack>_</RangedAttack>
+			<ChrouchTexture>_</ChrouchTexture>
+			<Description>_</Description>
+			<X>40</X>
+			<Y>500</Y>
+		</Player>
+		<Map>
+			<MainTexture>Graphics\levels\level1.png</MainTexture>
+			<Celling>300</Celling>
+			<Floor>500</Floor>
+			<LeftCorner>40</LeftCorner>
+			<RightCorner>1310</RightCorner>
+		</Map>
+		<Entitys>
+
+		</Entitys>
+	</wagon>
+	<wagon level="3">
+		<Player>
+			<Id>3</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>Graphics/Player/player.png</CalmTexture>
+			<MeleeAttack>_</MeleeAttack>
+			<RangedAttack>_</RangedAttack>
+			<ChrouchTexture>_</ChrouchTexture>
+			<Description>_</Description>
+			<X>40</X>
+			<Y>500</Y>
+		</Player>
+		<Map>
+			<MainTexture>Graphics\levels\level2.png</MainTexture>
+			<Celling>300</Celling>
+			<Floor>500</Floor>
+			<LeftCorner>40</LeftCorner>
+			<RightCorner>1310</RightCorner>
+		</Map>
+		<Entitys>
+
+		</Entitys>
+	</wagon>
 </wagons>

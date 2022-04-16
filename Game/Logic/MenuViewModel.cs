@@ -22,6 +22,16 @@ namespace Game.Logic
                 var lvl1Window = new MainWindow(1);
                 lvl1Window.Show();
             });
+            Level2Command = new RelayCommand(() =>
+            {
+                var lvl2Window = new MainWindow(2);
+                lvl2Window.Show();
+            });
+            Level3Command = new RelayCommand(() =>
+            {
+                var lvl3Window = new MainWindow(3);
+                lvl3Window.Show();
+            });
 
             ExitCommand = new RelayCommand(() => Environment.Exit(0));
         }

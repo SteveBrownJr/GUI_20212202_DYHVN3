@@ -19,6 +19,7 @@ namespace GrandTrainRobbery.Logic
 
         List<Movements> PlayerMovements;
         int _lvl;
+        public int LVL { get { return this._lvl; } }
         GameDB Data;
         public string GetLevelPath()
         {
