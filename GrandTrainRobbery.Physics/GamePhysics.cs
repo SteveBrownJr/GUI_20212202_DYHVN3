@@ -10,19 +10,19 @@ namespace GrandTrainRobbery.Physics
         {
             if (!p.standing_on_the_ground)
             {
-                p.Y += 4;
+                p.Y += 1;
                 if (!p.standing_on_the_ground)
                 {
-                    p.Y += 4;
+                    p.Y += 1;
                     if (!p.standing_on_the_ground)
                     {
-                        p.Y += 4;
+                        p.Y += 1;
                         if (!p.standing_on_the_ground)
                         {
-                            p.Y += 4;
+                            p.Y += 1;
                             if (!p.standing_on_the_ground)
                             {
-                                p.Y += 4;
+                                p.Y += 1;
                             }
                         }
                     }
@@ -35,19 +35,19 @@ namespace GrandTrainRobbery.Physics
             {
                 if (!entitys[i].standing_on_the_ground)
                 {
-                    entitys[i].Y += 4;
+                    entitys[i].Y += 1;
                     if (!entitys[i].standing_on_the_ground)
                     {
-                        entitys[i].Y += 4;
+                        entitys[i].Y += 1;
                         if (!entitys[i].standing_on_the_ground)
                         {
-                            entitys[i].Y += 4;
+                            entitys[i].Y += 1;
                             if (!entitys[i].standing_on_the_ground)
                             {
-                                entitys[i].Y += 4;
+                                entitys[i].Y += 1;
                                 if (!entitys[i].standing_on_the_ground)
                                 {
-                                    entitys[i].Y += 4;
+                                    entitys[i].Y += 1;
                                 }
                             }
                         }

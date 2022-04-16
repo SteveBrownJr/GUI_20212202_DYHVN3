@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GrandTrainRobbery.Logic
@@ -53,8 +54,9 @@ namespace GrandTrainRobbery.Logic
             //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
 
             GamePhysics.Move(Data.GetPlayer, Data.GetWagon);
-            GamePhysics.Gravity(Data.GetPlayer);
-
+            new Thread(() =>
+            GamePhysics.Gravity(Data.GetPlayer)
+            ).Start();
             foreach (Movements move in PlayerMovements)
             {
                 switch (move)
@@ -74,6 +76,10 @@ namespace GrandTrainRobbery.Logic
                     default:
                         break;
                 }
+            }
+            if (!PlayerMovements.Contains(Movements.UP))
+            {
+                Data.GetPlayer.Jump = false;
             }
         }
     }
