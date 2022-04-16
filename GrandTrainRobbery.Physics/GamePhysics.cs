@@ -11,15 +11,15 @@ namespace GrandTrainRobbery.Physics
         {
             for (int i = 0; i < 10; i++)
             {
-            if (!p.standing_on_the_ground)
-            {
-                p.Y += 1*s.Seconds();
-            }
-            else
-            {
-                s.Reset();
-                break;
-            }
+                if (!p.standing_on_the_ground)
+                {
+                    p.Y += s.Seconds();
+                }
+                else
+                {
+                    s.Reset();
+                    break;
+                }
             }
         }
         public static void Gravity(List<IEntity> entitys)
@@ -50,6 +50,10 @@ namespace GrandTrainRobbery.Physics
         }
         public static void Move(IEntity e,Map m)
         {
+            if (e.Y > m.Floor)
+            {
+                e.Y = m.Floor;
+            }
             if (e.Jump && e.standing_on_the_ground)
             {
                 e.Y -= 80;
@@ -65,6 +69,7 @@ namespace GrandTrainRobbery.Physics
                 e.X -= 20;
                 e.MoveLeft = false;
             }
+            
         }
     }
 }
