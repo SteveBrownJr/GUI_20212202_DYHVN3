@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<wagons>
+	<wagon level="0">
+		<Player>
+			<Id>0</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>CorrectTexture</CalmTexture>
+			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
+			<RangedAttack>CorrectRangedAttack</RangedAttack>
+			<ChrouchTexture>CorrectChrouchTexture</ChrouchTexture>
+			<Description>CorrectDescription</Description>
+			<X>-1</X>
+			<Y>-1</Y>
+		</Player>
+		<Map>
+			<MainTexture>CorrectTexture</MainTexture>
+			<Celling>0</Celling>
+			<Floor>100</Floor>
+			<LeftCorner>0</LeftCorner>
+			<RightCorner>100</RightCorner>
+		</Map>
+		<Entitys>
+			
+		</Entitys>
+	</wagon>
+	<wagon level="1">
+		<Player>
+			<Id>1</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>Graphics/Player/player.png</CalmTexture>
+			<MeleeAttack>_</MeleeAttack>
+			<RangedAttack>_</RangedAttack>
+			<ChrouchTexture>_</ChrouchTexture>
+			<Description>_</Description>
+			<X>50</X>
+			<Y>480</Y>
+		</Player>
+		<Map>
+			<MainTexture>Graphics\levels\level0.png</MainTexture>
+			<Celling>300</Celling>
+			<Floor>480</Floor>
+			<LeftCorner>40</LeftCorner>
+			<RightCorner>1310</RightCorner>
+		</Map>
+		<Entitys>
+
+		</Entitys>
+	</wagon>
+	
+</wagons>

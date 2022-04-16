@@ -1,10 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,11 +21,10 @@
     <None Remove="Graphics\levels\level0.png" />
     <None Remove="Graphics\levels\level1.png" />
     <None Remove="Graphics\levels\level2.png" />
-    <None Remove="Graphics\Menu\menu.png" />
     <None Remove="Graphics\other\barell.png" />
     <None Remove="Graphics\other\chest.png" />
     <None Remove="Graphics\Player\player.png" />
-    <None Remove="Graphics\levels\wagon.png" />
+    <None Remove="WagonDefinitions.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,9 +76,6 @@
     <Content Include="Graphics\levels\level2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\Menu\menu.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Graphics\other\barell.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -92,15 +85,13 @@
     <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="WagonDefinitions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GrandTrainRobbery.Logic\GrandTrainRobbery.Logic.csproj" />
     <ProjectReference Include="..\GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
   </ItemGroup>
 
 </Project>

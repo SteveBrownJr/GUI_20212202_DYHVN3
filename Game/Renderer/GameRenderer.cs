@@ -1,5 +1,5 @@
-﻿using Game.Logic;
-using Game.Models;
+﻿using GrandTrainRobbery.Logic;
+using GrandTrainRobbery.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,32 +27,7 @@ namespace Game.Renderer
             this.control = logic;
         }
 
-        public void PlayerControl(controls c)
-        {
-            switch (c)
-            {
-                case controls.UP:
-                    control.PlayerJump();
-                    break;
-                case controls.DOWN:
-                    control.PlayerCrouch();
-                    break;
-                case controls.LEFT:
-                    control.PlayerMoveLeft();
-                    break;
-                case controls.RIGHT:
-                    control.PlayerMoveRight();
-                    break;
-                case controls.ATTACK:
-
-                    break;
-                case controls.MELEE:
-
-                    break;
-                default:
-                    break;
-            }
-        }
+        
         public void Resize(Size size)
         {
             this.size = size;

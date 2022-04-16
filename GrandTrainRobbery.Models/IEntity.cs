@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Models
+namespace GrandTrainRobbery.Models
 {
     public interface IEntity
     {
@@ -14,8 +14,10 @@ namespace Game.Models
         bool standing_on_the_ground { get; }
         public int X { get; set; }
         public int Y { get; set; }
-        public int TimeSinceFall { get; set; }
-        public string TexturePath { get; set; }
+        public bool MoveLeft { get; set; }
+        public bool MoveRight { get; set; }
+        public bool Jump { get; set; }
+        public bool Chrouch { get; set; }
         public void MeleeAttack();
         public void RangedAttack();
     }

@@ -9,7 +9,8 @@
         Title="MainWindow" Height="768" Width="1360"
         SizeChanged="Window_SizeChanged"
         Loaded="Window_Loaded"
-        KeyDown="OnKeyDownHandler">
+        KeyDown="OnKeyDownHandler"
+        KeyUp="OnKeyUpHandler">
     <Grid x:Name="grid">
         <renderer:GameRenderer x:Name="renderer"/>
     </Grid>

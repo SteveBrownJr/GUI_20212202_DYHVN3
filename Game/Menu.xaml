@@ -1,0 +1,21 @@
+﻿<Window x:Class="Game.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game"
+        xmlns:local1="clr-namespace:Game.Logic"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Menu" Height="768" Width="1360">
+    <Grid x:Name="grid">
+        <Grid.DataContext>
+            <local1:MenuViewModel/>
+        </Grid.DataContext>
+        <Image x:Name="menu" Source="Graphics/Menu/menu.png" Tag="menu" Stretch="Fill"/>
+        <Button x:Name="lvl1" Content="Level 1: Indianapolis" HorizontalAlignment="Left" Height="50" Margin="881,326,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level1Command}"/>
+        <Button x:Name="lvl2" Content="Level 2: San Antonio" HorizontalAlignment="Left" Height="50" Margin="572,559,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown"/>
+        <Button x:Name="lvl3" Content="Level 3: Los Angeles" HorizontalAlignment="Left" Height="50" Margin="157,457,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown"/>
+        <Button x:Name="quit" Content="Quit" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Background="SandyBrown" Command="{Binding ExitCommand}"/>
+    </Grid>
+</Window>
