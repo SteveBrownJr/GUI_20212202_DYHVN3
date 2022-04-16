@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using GrandTrainRobbery.Physics;
+using NUnit.Framework;
 using System;
 
 namespace GrandTrainRobbery.Tester
@@ -9,7 +10,7 @@ namespace GrandTrainRobbery.Tester
         [Test]
         public static void Test1()
         {
-            
+            GamePhysics TesterGamePhysics = new GamePhysics(new System.Collections.Generic.List<Models.IEntity>());
         }
     }
 }
