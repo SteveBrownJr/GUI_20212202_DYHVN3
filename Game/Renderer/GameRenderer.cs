@@ -44,11 +44,29 @@ namespace Game.Renderer
             
             if (player != null && model != null && size.Width > 50 && size.Height > 50)
             {
-                if (player.X > 1360 - 91 - 50 && (control as GameLogic).LVL != 1)
+                if (player.MoveRight && player.X > 700 - 91 - 50 && (control as GameLogic).LVL == 2 && wagonview != 1360)
                 {                    
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0-(wagonview+=5), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X--, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0-(wagonview+=10), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X-=10, player.Y, 90, 90));
                     drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270/1.5, 89/1.5));
+                }
+                else if (player.MoveLeft && player.X < 700 - 91 - 50 && (control as GameLogic).LVL == 2 && wagonview != 0)
+                {
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X+=10, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+                }
+                else if (player.MoveRight && player.X > 700 - 91 - 50 && (control as GameLogic).LVL == 3 && wagonview != 2710)
+                {
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview += 10), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X -= 10, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+                }
+                else if (player.MoveLeft && player.X < 700 - 91 - 50 && (control as GameLogic).LVL == 3 && wagonview != 0)
+                {
+                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
+                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X += 10, player.Y, 90, 90));
+                    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
                 }
                 else
                 {                    
