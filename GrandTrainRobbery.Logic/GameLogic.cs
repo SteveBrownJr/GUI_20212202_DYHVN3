@@ -51,8 +51,10 @@ namespace GrandTrainRobbery.Logic
         {
             PlayerMovements = Buttons;
             //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
+
             GamePhysics.Move(Data.GetPlayer, Data.GetWagon);
             GamePhysics.Gravity(Data.GetPlayer);
+
             foreach (Movements move in PlayerMovements)
             {
                 switch (move)
