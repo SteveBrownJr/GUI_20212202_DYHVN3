@@ -9,6 +9,7 @@ namespace GrandTrainRobbery.Logic
 {
     public interface IGameModel
     {
+        public void LowerActualHp();
         public string GetLevelPath();
         public Player GetPlayer();
     }

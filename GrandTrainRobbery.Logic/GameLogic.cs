@@ -83,5 +83,13 @@ namespace GrandTrainRobbery.Logic
                 Data.GetPlayer.Jump = false;
             }
         }
+
+        public void LowerActualHp()
+        {
+            if (Data.GetPlayer.ActualHp > 0)
+            {
+                Data.GetPlayer.ActualHp -= 5;
+            }            
+        }
     }
 }
