@@ -16,14 +16,6 @@ namespace GrandTrainRobbery.Models
         public int LeftCorner;
         public int RightCorner;
         public string LevelPath { get { return levelPath; } }
-        public Map(int id)
-        {
-            this.levelPath = Path.Combine("Graphics", "levels", "level" + id + ".png");
-            Floor = 480;
-            LeftCorner = 40;
-            RightCorner = 1310;
-            Ceiling = 300;
-        }
         public Map(XElement MapX)
         {
             levelPath = MapX.Element("MainTexture").Value;
@@ -32,6 +24,13 @@ namespace GrandTrainRobbery.Models
             LeftCorner = int.Parse(MapX.Element("LeftCorner").Value);
             RightCorner = int.Parse(MapX.Element("RightCorner").Value);
         }
+        public Map(int id)
+        {
+            this.levelPath = Path.Combine("Graphics", "levels", "level" + id + ".png");
+            Floor = 480;
+            LeftCorner = 40;
+            RightCorner = 1310;
+            Ceiling = 300;
+        }
     }
-
 }

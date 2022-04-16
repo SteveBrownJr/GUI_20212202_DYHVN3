@@ -22,15 +22,29 @@
 		<Entitys>
 			
 		</Entitys>
-		
 	</wagon>
 	<wagon level="1">
 		<Player>
-			<DefaultTexture>player.png</DefaultTexture>
-			<MeeleeTexture></MeeleeTexture>
-			<RangedAttackTexture></RangedAttackTexture>
-			<Spawn>200,200</Spawn>
+			<Id>1</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>Graphics/Player/player.png</CalmTexture>
+			<MeleeAttack>_</MeleeAttack>
+			<RangedAttack>_</RangedAttack>
+			<ChrouchTexture>_</ChrouchTexture>
+			<Description>_</Description>
+			<X>50</X>
+			<Y>480</Y>
 		</Player>
+		<Map>
+			<MainTexture>Graphics\levels\level0.png</MainTexture>
+			<Celling>300</Celling>
+			<Floor>480</Floor>
+			<LeftCorner>40</LeftCorner>
+			<RightCorner>1310</RightCorner>
+		</Map>
+		<Entitys>
+
+		</Entitys>
 	</wagon>
 	
 </wagons>

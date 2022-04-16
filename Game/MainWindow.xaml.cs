@@ -23,11 +23,11 @@ namespace Game
     public partial class MainWindow : Window
     {
         GameLogic logic;
-        public MainWindow()
+        public MainWindow(int lvl)
         {
             InitializeComponent();
 
-            logic = new GameLogic(0);
+            logic = new GameLogic(lvl);
             renderer.SetupLogic(logic);
 
             DispatcherTimer dt = new DispatcherTimer();

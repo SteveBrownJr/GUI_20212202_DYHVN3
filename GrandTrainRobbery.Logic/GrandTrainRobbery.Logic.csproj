@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GrandTrainRobbery.Data\GrandTrainRobbery.Data.csproj" />
     <ProjectReference Include="..\GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj" />
     <ProjectReference Include="..\GrandTrainRobbery.Physics\GrandTrainRobbery.Physics.csproj" />
   </ItemGroup>

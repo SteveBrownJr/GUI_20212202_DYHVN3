@@ -19,7 +19,7 @@ namespace Game.Logic
         {
             Level1Command = new RelayCommand(() =>
             {
-                var lvl1Window = new MainWindow();
+                var lvl1Window = new MainWindow(1);
                 lvl1Window.Show();
             });
 
