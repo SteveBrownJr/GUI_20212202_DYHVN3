@@ -9,6 +9,6 @@ namespace GrandTrainRobbery.Logic
     public enum Movements {LEFT,RIGHT,UP,DOWN }
     public interface IGameControl
     {
-        public void MovementButtonsDown(List<Movements> Buttons);
+        public void TimeStep(List<Movements> Buttons);
     }
 }

@@ -46,67 +46,33 @@ namespace GrandTrainRobbery.Logic
             PlayerMovements = new List<Movements>();
             _lvl = lvl;
             Data = new GameDB(lvl);
-
-            new Task(() =>
-            {
-                while (true)
-                {
-                    System.Threading.Thread.Sleep(100);
-                    lock (EntityDataLock)
-                    {
-                        //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
-                    }
-                    lock (PlayerDataLock)
-                    {
-                        GamePhysics.Move(Data.GetPlayer,Data.GetWagon);
-                        GamePhysics.Gravity(Data.GetPlayer);
-                    }
-
-                }
-            },TaskCreationOptions.LongRunning).Start();
-            new Task(() =>
-            {
-                while (true)
-                {
-                    System.Threading.Thread.Sleep(62);
-                    lock (Movementlock)
-                    {
-                        lock (PlayerDataLock)
-                        {
-                            foreach (Movements move in PlayerMovements)
-                            {
-                                switch (move)
-                                {
-                                    case Movements.LEFT:
-                                        Data.GetPlayer.MoveLeft = true;
-                                        break;
-                                    case Movements.RIGHT:
-                                        Data.GetPlayer.MoveRight = true;
-                                        break;
-                                    case Movements.UP:
-                                        Data.GetPlayer.Jump = true;
-                                        break;
-                                    case Movements.DOWN:
-                                        Data.GetPlayer.Chrouch = true;
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }, TaskCreationOptions.LongRunning).Start();
         }
-        public void MovementButtonsDown(List<Movements> Buttons)
+        public void TimeStep(List<Movements> Buttons)
         {
-            new Task(() =>
+            PlayerMovements = Buttons;
+            //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
+            GamePhysics.Move(Data.GetPlayer, Data.GetWagon);
+            GamePhysics.Gravity(Data.GetPlayer);
+            foreach (Movements move in PlayerMovements)
             {
-                lock (Movementlock)
+                switch (move)
                 {
-                    PlayerMovements = Buttons;
+                    case Movements.LEFT:
+                        Data.GetPlayer.MoveLeft = true;
+                        break;
+                    case Movements.RIGHT:
+                        Data.GetPlayer.MoveRight = true;
+                        break;
+                    case Movements.UP:
+                        Data.GetPlayer.Jump = true;
+                        break;
+                    case Movements.DOWN:
+                        Data.GetPlayer.Chrouch = true;
+                        break;
+                    default:
+                        break;
                 }
-            },TaskCreationOptions.LongRunning).Start();
+            }
         }
     }
 }

@@ -61,7 +61,7 @@ namespace Game
                     }
                 }
 
-                control.MovementButtonsDown(MV);
+                control.TimeStep(MV);
             };
 
             dt.Start();
