@@ -26,19 +26,21 @@
 	<wagon level="1">
 		<Player>
 			<Id>1</Id>
-			<Name>CorrectName</Name>
-			<CalmTexture>Graphics/Player/player.png</CalmTexture>
-			<MeleeAttack>_</MeleeAttack>
-			<RangedAttack>_</RangedAttack>
-			<ChrouchTexture>_</ChrouchTexture>
-			<Description>_</Description>
+			<Name>TheOnlyOnePlayer</Name>
+			<CalmTexture>Graphics/Player/Player_CALM.gif</CalmTexture>
+			<RunTexture>Graphics/Player/Player_RUN.gif</RunTexture>
+			<JumpTexture>Graphics/Player/Player_JUMP.gif</JumpTexture>
+			<MeleeAttack>Graphics/Player/Player_MELEE.gif</MeleeAttack>
+			<RangedAttack>Graphics/Player/Player_SHOOT.gif</RangedAttack>
+			<ChrouchTexture>Graphics/Player/Player_RUN.gif</ChrouchTexture>
+			<Description>The Player</Description>
 			<X>40</X>
 			<Y>480</Y>
 		</Player>
 		<Map>
 			<MainTexture>Graphics\levels\level0.png</MainTexture>
 			<Celling>300</Celling>
-			<Floor>480</Floor>
+			<Floor>495</Floor>
 			<LeftCorner>40</LeftCorner>
 			<RightCorner>1310</RightCorner>
 		</Map>
@@ -49,19 +51,21 @@
 	<wagon level="2">
 		<Player>
 			<Id>2</Id>
-			<Name>CorrectName</Name>
-			<CalmTexture>Graphics/Player/player.png</CalmTexture>
-			<MeleeAttack>_</MeleeAttack>
-			<RangedAttack>_</RangedAttack>
-			<ChrouchTexture>_</ChrouchTexture>
-			<Description>_</Description>
+			<Name>TheOnlyOnePlayer</Name>
+			<CalmTexture>Graphics/Player/Player_CALM.gif</CalmTexture>
+			<RunTexture>Graphics/Player/Player_RUN.gif</RunTexture>
+			<JumpTexture>Graphics/Player/Player_JUMP.gif</JumpTexture>
+			<MeleeAttack>Graphics/Player/Player_MELEE.gif</MeleeAttack>
+			<RangedAttack>Graphics/Player/Player_SHOOT.gif</RangedAttack>
+			<ChrouchTexture>Graphics/Player/Player_RUN.gif</ChrouchTexture>
+			<Description>The Player</Description>
 			<X>40</X>
-			<Y>500</Y>
+			<Y>480</Y>
 		</Player>
 		<Map>
 			<MainTexture>Graphics\levels\level1.png</MainTexture>
 			<Celling>300</Celling>
-			<Floor>500</Floor>
+			<Floor>495</Floor>
 			<LeftCorner>40</LeftCorner>
 			<RightCorner>1310</RightCorner>
 		</Map>
