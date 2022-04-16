@@ -1,16 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <wagons>
-	<wagon id="1">
+	<wagon level="0">
+		<Player>
+			<Id>0</Id>
+			<Name>CorrectName</Name>
+			<CalmTexture>CorrectTexture</CalmTexture>
+			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
+			<RangedAttack>CorrectRangedAttack</RangedAttack>
+			<ChrouchTexture>CorrectChrouchTexture</ChrouchTexture>
+			<Description>CorrectDescription</Description>
+			<X>-1</X>
+			<Y>-1</Y>
+		</Player>
+		<Map>
+			<MainTexture>CorrectTexture</MainTexture>
+			<Celling>0</Celling>
+			<Floor>100</Floor>
+			<LeftCorner>0</LeftCorner>
+			<RightCorner>100</RightCorner>
+		</Map>
+		<Entitys>
+			
+		</Entitys>
+		
+	</wagon>
+	<wagon level="1">
 		<Player>
 			<DefaultTexture>player.png</DefaultTexture>
 			<MeeleeTexture></MeeleeTexture>
 			<RangedAttackTexture></RangedAttackTexture>
 			<Spawn>200,200</Spawn>
 		</Player>
-		<XMIN></XMIN>
-		<YMIN></YMIN>
-		<XMAX></XMAX>
-		<YMAX></YMAX>
 	</wagon>
 	
 </wagons>
