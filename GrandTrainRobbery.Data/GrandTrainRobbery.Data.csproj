@@ -1,10 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +24,7 @@
     <None Remove="Graphics\other\barell.png" />
     <None Remove="Graphics\other\chest.png" />
     <None Remove="Graphics\Player\player.png" />
-    <None Remove="Graphics\levels\wagon.png" />
+    <None Remove="WagonDefinitions.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -88,11 +85,9 @@
     <Content Include="Graphics\Player\player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GrandTrainRobbery.Logic\GrandTrainRobbery.Logic.csproj" />
-    <ProjectReference Include="..\GrandTrainRobbery.Models\GrandTrainRobbery.Models.csproj" />
+    <Content Include="WagonDefinitions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

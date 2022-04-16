@@ -1,6 +1,12 @@
-﻿namespace Game.Logic
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GrandTrainRobbery.Logic
 {
-    internal interface IGameControl
+    public interface IGameControl
     {
         public void PlayerMoveLeft();
         public void PlayerMoveRight();

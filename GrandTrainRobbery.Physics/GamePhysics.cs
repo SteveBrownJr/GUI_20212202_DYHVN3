@@ -1,11 +1,8 @@
-﻿using Game.Models;
+﻿using GrandTrainRobbery.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Game.Physics
+namespace GrandTrainRobbery.Physics
 {
     public class GamePhysics
     {

@@ -1,18 +1,15 @@
-﻿using Game.Models;
-using Game.Physics;
+﻿using GrandTrainRobbery.Models;
+using GrandTrainRobbery.Physics;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 
-namespace Game.Logic
+namespace GrandTrainRobbery.Logic
 {
-    internal class GameLogic : IGameModel, IGameControl
+    public class GameLogic : IGameModel, IGameControl
     {
         Map map;
         List<IEntity> entitys;
@@ -24,7 +21,7 @@ namespace Game.Logic
         }
         public Player GetPlayer()
         {
-            if (entitys[0]!=null)
+            if (entitys[0] != null)
             {
                 return entitys[0] as Player;
             }
@@ -38,15 +35,15 @@ namespace Game.Logic
         {
             _lvl = lvl;
             map = new Map(_lvl);
-            
-            entitys=new List<IEntity>();
+
+            entitys = new List<IEntity>();
             physics = new GamePhysics(entitys);
-            entitys.Add(new Player(map,"Player",
+            entitys.Add(new Player(map, "Player",
                 0,
                 "TheOnlyOnePlayer",
                 50,
                 480,
-                Path.Combine("Graphics","Player","player.png")
+                Path.Combine("Graphics", "Player", "player.png")
                 ));
         }
         public void TimeStep()
@@ -58,21 +55,21 @@ namespace Game.Logic
             if ((entitys[0].X - 4) >= map.LeftCorner)
             {
                 entitys[0].X = entitys[0].X - 4;
-            }            
+            }
         }
         public void PlayerMoveRight()
         {
             if ((entitys[0].X + 4) <= map.RightCorner - 90)
             {
                 entitys[0].X = entitys[0].X + 4;
-            }            
+            }
         }
         public void PlayerJump()
         {
             if (entitys[0].standing_on_the_ground)
             {
                 entitys[0].Y -= 80;
-            }            
+            }
         }
         public void PlayerCrouch()
         {
