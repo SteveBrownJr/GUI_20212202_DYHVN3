@@ -28,11 +28,38 @@ namespace Game.Renderer
             {
                 if (!player.standing_on_the_ground)
                 {
+                    if (player.MoveRight)
+                    {
+                        return new ImageBrush(PlayerAnimationsManager.GetNextofThis(2));//Ha nem áll a földön akkor ugrik
+                    }
+                    if (player.MoveLeft)
+                    {
+                        var picture = PlayerAnimationsManager.GetNextofThis(2);
+                        var transform = new ScaleTransform(-1, 1, 0, 0);
+                        var tb = new TransformedBitmap();
+                        tb.BeginInit();
+                        tb.Source = picture;
+                        tb.Transform = transform;
+                        tb.EndInit();
+                        return new ImageBrush(tb);
+                    }
                     return new ImageBrush(PlayerAnimationsManager.GetNextofThis(2));//Ha nem áll a földön akkor ugrik
+
                 }
-                if (player.MoveLeft || player.MoveRight)
+                if (player.MoveRight)
                 {
                     return new ImageBrush(PlayerAnimationsManager.GetNextofThis(1)); //Ha épp mozog akkor fix mozog
+                }
+                if (player.MoveLeft)
+                {
+                    var picture = PlayerAnimationsManager.GetNextofThis(1);
+                    var transform = new ScaleTransform(-1, 1, 0, 0);
+                    var tb = new TransformedBitmap();
+                    tb.BeginInit();
+                    tb.Source = picture;
+                    tb.Transform = transform;
+                    tb.EndInit();
+                    return new ImageBrush(tb);
                 }
                 return new ImageBrush(PlayerAnimationsManager.GetNextofThis(0)); //végesetben is megkell jeleníteni valamit
             } 
