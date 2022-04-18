@@ -5,6 +5,8 @@
 			<Id>0</Id>
 			<Name>CorrectName</Name>
 			<CalmTexture>CorrectTexture</CalmTexture>
+			<RunTexture>CorrectTexture</RunTexture>
+			<JumpTexture>CorrectJumpTexture</JumpTexture>
 			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
 			<RangedAttack>CorrectRangedAttack</RangedAttack>
 			<ChrouchTexture>CorrectChrouchTexture</ChrouchTexture>
@@ -20,7 +22,19 @@
 			<RightCorner>100</RightCorner>
 		</Map>
 		<Entitys>
-			
+			<Entity type="MOB">
+				<Id>1</Id>
+				<Name>CorrectMOBName</Name>
+				<CalmTexture>CorrectMOBTexture</CalmTexture>
+				<RunTexture>CorrectMOBRunTexture</RunTexture>
+				<JumpTexture>CorrectMOBJumpTexture</JumpTexture>
+				<MeleeAttack>CorrectMOBMeleeAttack</MeleeAttack>
+				<RangedAttack>CorrectMOBRangedAttack</RangedAttack>
+				<ChrouchTexture>CorrectMOBChrouchTexture</ChrouchTexture>
+				<Description>CorrectMOBDescription</Description>
+				<X>-1</X>
+				<Y>-1</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="1">

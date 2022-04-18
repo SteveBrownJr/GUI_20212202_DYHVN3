@@ -22,9 +22,10 @@ namespace GrandTrainRobbery.Data
             wagon = new Map(WagonDefinition.Element("Map"));
             player = new Player(wagon,WagonDefinition.Element("Player"));
             entitys = new List<IEntity>();
-            foreach (var entity in WagonDefinition.Element("Entitys").Elements("Entity"))
+            
+            foreach (var Xentity in WagonDefinition.Element("Entitys").Elements("Entity"))
             {
-                entitys.Add(new MOB(entity));
+                entitys.Add(new MOB(wagon, Xentity));
             }
         }
     }

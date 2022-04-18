@@ -59,7 +59,6 @@ namespace GrandTrainRobbery.Models
             jumpTexturePath = PlayerXElement.Element("JumpTexture").Value;
             runTexturePath = PlayerXElement.Element("RunTexture").Value;
 
-
             MoveLeft = false;
             MoveRight = false;
             Jump = false;

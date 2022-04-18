@@ -21,7 +21,7 @@ namespace GrandTrainRobbery.Models
         private bool jump;
         private bool chrouch;
         XElement source;
-        Map _m;
+        Map m;
         string meleeTexturePath;
         string attackTexturePath;
         string chrouchTexturePath;
@@ -46,12 +46,12 @@ namespace GrandTrainRobbery.Models
         public bool Chrouch { get => chrouch; set => chrouch=value; }
         public int ActualHp { get => actualHp; set => actualHp = value; }
 
-        Map M { get => _m; }
+        Map M { get => m; }
         public MOB(Map _m, XElement MOBXElement)
         {
             actualHp = 30;
             source = MOBXElement;
-            _m = M;
+            m = _m;
             Name = MOBXElement.Element("Name").Value;
             id = int.Parse(MOBXElement.Element("Id").Value);
             description = MOBXElement.Element("Description").Value;
