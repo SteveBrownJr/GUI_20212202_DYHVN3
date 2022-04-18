@@ -134,7 +134,7 @@
     <Content Include="Graphics\other\barell.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\other\chest.png">
+    <Content Include="Graphics\Entitys\Chest\chest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\Player\Player_CALM.gif">
@@ -284,7 +284,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Graphics\Entitys\Chest\" />
     <Folder Include="Graphics\Entitys\MOB\" />
   </ItemGroup>
 

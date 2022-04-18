@@ -34,6 +34,11 @@ namespace GrandTrainRobbery.Logic
             }
             return p;
         }
+
+        public Chest GetChest()
+        {
+            return Data.GetChest;
+        }
         public IEnumerable<IEntity> GetEntities()
         {
             IEnumerable<IEntity> ie = null;

@@ -14,6 +14,7 @@ namespace GrandTrainRobbery.Data
         public Player GetPlayer { get => player; }
         public Player GetCopyPlayer { get => Player.GetCopy(player); }
         public Map GetWagon { get => wagon; }
+        public Chest GetChest { get => entitys.Where(c => c is Chest).First() as Chest; }
         public IEnumerable<IEntity> GetEntitys { get => entitys; }
         public IEnumerable<IEntity> GetCopyEntitys { get => entitys.Select(e=>e).ToList(); }
         public GameDB(int lvl) 
@@ -25,7 +26,17 @@ namespace GrandTrainRobbery.Data
             
             foreach (var Xentity in WagonDefinition.Element("Entitys").Elements("Entity"))
             {
-                entitys.Add(new MOB(wagon, Xentity));
+                switch (Xentity.Attribute("type").Value)
+                {
+                    case "MOB":
+                        entitys.Add(new MOB(wagon, Xentity));
+                        break;
+                    case "Chest":
+                        entitys.Add(new Chest(wagon, Xentity));
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
