@@ -12,6 +12,5 @@ namespace GrandTrainRobbery.Logic
         public void LowerActualHp();
         public string GetLevelPath();
         public Player GetPlayer();
-        public Chest GetChest();
     }
 }

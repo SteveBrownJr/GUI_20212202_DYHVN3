@@ -91,10 +91,5 @@ namespace GrandTrainRobbery.Logic
                 Data.GetPlayer.ActualHp -= 5;
             }            
         }
-
-        public Chest GetChest()
-        {
-            return Data.GetChest;
-        }
     }
 }
