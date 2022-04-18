@@ -61,14 +61,14 @@
 		<Entitys>
 			<Entity type="MOB">
 				<Id>1</Id>
-				<Name>CorrectMOBName</Name>
-				<CalmTexture>CorrectMOBTexture</CalmTexture>
-				<RunTexture>CorrectMOBRunTexture</RunTexture>
-				<JumpTexture>CorrectMOBJumpTexture</JumpTexture>
-				<MeleeAttack>CorrectMOBMeleeAttack</MeleeAttack>
-				<RangedAttack>CorrectMOBRangedAttack</RangedAttack>
-				<ChrouchTexture>CorrectMOBChrouchTexture</ChrouchTexture>
-				<Description>CorrectMOBDescription</Description>
+				<Name>Sheriff</Name>
+				<CalmTexture>Graphics/Entitys/MOB/Sheriff/CALM/</CalmTexture>
+				<RunTexture>Graphics/Entitys/MOB/Sheriff/WALK/</RunTexture>
+				<JumpTexture>Graphics/Entitys/MOB/Sheriff/CALM/</JumpTexture>
+				<MeleeAttack>Graphics/Entitys/MOB/Sheriff/SHOOT/</MeleeAttack>
+				<RangedAttack>Graphics/Entitys/MOB/Sheriff/SHOOT/</RangedAttack>
+				<ChrouchTexture>Graphics/Entitys/MOB/Sheriff/CALM/</ChrouchTexture>
+				<Description>The our enemy</Description>
 				<X>-1</X>
 				<Y>-1</Y>
 			</Entity>
