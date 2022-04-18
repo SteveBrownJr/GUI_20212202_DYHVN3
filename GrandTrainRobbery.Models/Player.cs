@@ -35,7 +35,7 @@ namespace GrandTrainRobbery.Models
         public int Y { get => y; set => y = value; }
         public bool standing_on_the_ground { get => m.Floor == this.Y; }
         public XElement source { get; }
-        public Map M { get; }
+        public Map M { get => m; }
         public bool MoveLeft {get;set;}
         public bool MoveRight { get; set; }
         public bool Jump { get; set; }
@@ -44,8 +44,8 @@ namespace GrandTrainRobbery.Models
 
         public Player(Map _m, XElement PlayerXElement)
         {
+            actualhp = 30;
             source = PlayerXElement;
-            M = _m;
             m = _m;
             Name = PlayerXElement.Element("Name").Value;
             id = int.Parse(PlayerXElement.Element("Id").Value);
