@@ -5,6 +5,8 @@
 			<Id>0</Id>
 			<Name>CorrectName</Name>
 			<CalmTexture>CorrectTexture</CalmTexture>
+			<RunTexture>CorrectRunTexture</RunTexture>
+			<JumpTexture>CorrectJumpTexture</JumpTexture>
 			<MeleeAttack>CorrectMeleeAttack</MeleeAttack>
 			<RangedAttack>CorrectRangedAttack</RangedAttack>
 			<ChrouchTexture>CorrectChrouchTexture</ChrouchTexture>
@@ -20,7 +22,13 @@
 			<RightCorner>100</RightCorner>
 		</Map>
 		<Entitys>
-			
+			<Entity type="Chest">
+				<Id>0</Id>
+				<Name>Chest</Name>
+				<CalmTexture>CorrectTexture</CalmTexture>
+				<X>-1</X>
+				<Y>-1</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="1">
@@ -45,7 +53,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>1</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/other/chest.png/</CalmTexture>
+				<X>1200</X>
+				<Y>500</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="2">
@@ -70,7 +84,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>2</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/other/chest.png/</CalmTexture>
+				<X>1200</X>
+				<Y>520</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="3">
@@ -95,7 +115,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>3</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/other/chest.png/</CalmTexture>
+				<X>1200</X>
+				<Y>520</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 </wagons>

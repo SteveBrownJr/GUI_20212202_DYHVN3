@@ -11,9 +11,11 @@ namespace GrandTrainRobbery.Data
         private Map wagon;
         private Player player;
         private List<IEntity> entitys;
+        private Chest chest;
         public Player GetPlayer { get => player; }
         public Player GetCopyPlayer { get => Player.GetCopy(player); }
         public Map GetWagon { get => wagon; }
+        public Chest GetChest { get => chest; }
         public IEnumerable<IEntity> GetEntitys { get => entitys; }
         public IEnumerable<IEntity> GetCopyEntitys { get => entitys.Select(e=>e).ToList(); }
         public GameDB(int lvl) 
@@ -22,6 +24,7 @@ namespace GrandTrainRobbery.Data
             wagon = new Map(WagonDefinition.Element("Map"));
             player = new Player(wagon,WagonDefinition.Element("Player"));
             player.ActualHp = 30;
+            chest = new Chest(wagon, WagonDefinition.Element("Entitys").Elements("Entity").First(t=>t.Attribute("type").Value=="Chest"));
             //Entitások nem kerülnek példányosításra
         }
     }

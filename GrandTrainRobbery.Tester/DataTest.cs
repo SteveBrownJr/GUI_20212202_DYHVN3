@@ -24,6 +24,8 @@ namespace GrandTrainRobbery.Tester
                 p.TexturePath == "CorrectTexture"&&
                 p.MeleeTexturePath=="CorrectMeleeAttack"&&
                 p.AttackTexturePath=="CorrectRangedAttack"&&
+                p.RunTexturePath== "CorrectRunTexture"&&
+                p.JumpTexturePath== "CorrectJumpTexture" &&
                 p.X==-1 &&
                 p.Y==-1 &&
                 p.Name=="CorrectName"
@@ -42,6 +44,19 @@ namespace GrandTrainRobbery.Tester
                 m.LeftCorner==0&&
                 m.RightCorner==100&&
                 m.LevelPath== "CorrectTexture");
+        }
+
+        [Test]
+        public static void ChestInstation()
+        {
+            GameDB testableDB = new GameDB(0);
+            Chest c = testableDB.GetChest;
+            Assert.That(
+                c.Name == "Chest" &&
+                c.Id == 0 &&
+                c.TexturePath == "CorrectTexture" &&
+                c.X == -1 &&
+                c.Y == -1);
         }
     }
 }
