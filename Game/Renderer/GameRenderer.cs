@@ -74,7 +74,6 @@ namespace Game.Renderer
             PlayerAnimationsManager.Append(player.TexturePath); //0. a nyugodt animáció
             PlayerAnimationsManager.Append(player.RunTexturePath); //1. a futó animáció
             PlayerAnimationsManager.Append(player.JumpTexturePath); //2. az ugró animáció
-
         }
 
         

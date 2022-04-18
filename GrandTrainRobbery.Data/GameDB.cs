@@ -23,9 +23,13 @@ namespace GrandTrainRobbery.Data
             XElement WagonDefinition = XDocument.Load("WagonDefinitions.xml").Root.Elements("wagon").First(t=>t.Attribute("level").Value==lvl.ToString());
             wagon = new Map(WagonDefinition.Element("Map"));
             player = new Player(wagon,WagonDefinition.Element("Player"));
-            player.ActualHp = 30;
-            chest = new Chest(wagon, WagonDefinition.Element("Entitys").Elements("Entity").First(t=>t.Attribute("type").Value=="Chest"));
-            //Entitások nem kerülnek példányosításra
+
+            entitys = new List<IEntity>();
+            
+            foreach (var Xentity in WagonDefinition.Element("Entitys").Elements("Entity"))
+            {
+                entitys.Add(new MOB(wagon, Xentity));
+            }
         }
     }
 }

@@ -44,6 +44,7 @@ namespace GrandTrainRobbery.Models
 
         public Player(Map _m, XElement PlayerXElement)
         {
+            actualhp = 30;
             source = PlayerXElement;
             m = _m;
             Name = PlayerXElement.Element("Name").Value;
@@ -57,7 +58,6 @@ namespace GrandTrainRobbery.Models
             meleeTexturePath = PlayerXElement.Element("MeleeAttack").Value;
             jumpTexturePath = PlayerXElement.Element("JumpTexture").Value;
             runTexturePath = PlayerXElement.Element("RunTexture").Value;
-
 
             MoveLeft = false;
             MoveRight = false;
