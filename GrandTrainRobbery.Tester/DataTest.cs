@@ -25,11 +25,8 @@ namespace GrandTrainRobbery.Tester
                 p.MeleeTexturePath=="CorrectMeleeAttack"&&
                 p.AttackTexturePath=="CorrectRangedAttack"&&
                 p.X==-1 &&
-                p.Y==-1 &&
-                p.Name=="CorrectName"
+                p.Y==-1
                 );
-               
-            
         }
         [Test]
         public static void MapInstatiation()
@@ -43,5 +40,25 @@ namespace GrandTrainRobbery.Tester
                 m.RightCorner==100&&
                 m.LevelPath== "CorrectTexture");
         }
+        [Test]
+        public static void MOBInstatiation()
+        {
+            GameDB testableDB = new GameDB(0);
+            MOB m = testableDB.GetEntitys.First() as MOB;
+            Assert.That(
+                m.Id==1&&
+                m.Name== "CorrectMOBName"&&
+                m.TexturePath== "CorrectMOBTexture"&&
+                m.RunTexturePath== "CorrectMOBRunTexture"&&
+                m.JumpTexturePath== "CorrectMOBJumpTexture"&&
+                m.MeleeTexturePath== "CorrectMOBMeleeAttack"&&
+                m.AttackTexturePath == "CorrectMOBRangedAttack"&&
+                m.ChrouchTexturePath== "CorrectMOBChrouchTexture"&&
+                m.Description== "CorrectMOBDescription"&&
+                m.X==-1 &&
+                m.Y==-1
+                );
+        }
+ 
     }
 }
