@@ -59,7 +59,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>1</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/other/chest.png/</CalmTexture>
+				<X>1200</X>
+				<Y>500</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="2">
