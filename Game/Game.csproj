@@ -283,4 +283,9 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Graphics\Entitys\Chest\" />
+    <Folder Include="Graphics\Entitys\MOB\" />
+  </ItemGroup>
+
 </Project>
