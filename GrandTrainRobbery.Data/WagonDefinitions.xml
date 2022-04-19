@@ -103,7 +103,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>2</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/Entitys/Chest/chest.png</CalmTexture>
+				<X>1250</X>
+				<Y>520</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 	<wagon level="3">
@@ -128,7 +134,13 @@
 			<RightCorner>1350</RightCorner>
 		</Map>
 		<Entitys>
-
+			<Entity type="Chest">
+				<Id>2</Id>
+				<Name>Chest</Name>
+				<CalmTexture>Graphics/Entitys/Chest/chest.png</CalmTexture>
+				<X>1250</X>
+				<Y>520</Y>
+			</Entity>
 		</Entitys>
 	</wagon>
 </wagons>
