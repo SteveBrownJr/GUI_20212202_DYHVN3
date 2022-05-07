@@ -61,6 +61,10 @@ namespace GrandTrainRobbery.Logic
             //GamePhysics.Gravity(Data.GetEntitys as List<IEntity>);
 
             GamePhysics.Move(Data.GetPlayer, Data.GetWagon);
+            for (int i = 0; i < GetMOBs.Count(); i++)
+            {
+                GamePhysics.Move(GetMOBs.ToArray()[i], Data.GetWagon);
+            }
             new Thread(() =>
             GamePhysics.Gravity(Data.GetPlayer)
             ).Start();

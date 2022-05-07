@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -9,6 +10,7 @@ namespace GrandTrainRobbery.Models
 {
     public class MOB :IEntity
     {
+        Random rnd = new Random();
         string name;
         int id;
         int x;
@@ -40,7 +42,7 @@ namespace GrandTrainRobbery.Models
         public int Y { get => y; set => y = value; }
         public bool standing_on_the_ground { get => M.Floor == this.Y; }
 
-        public bool MoveLeft { get => moveLeft; set => moveRight = value; }
+        public bool MoveLeft { get => moveLeft; set => moveLeft = value; }
         public bool MoveRight { get => moveRight; set => moveRight=value; }
         public bool Jump { get => jump; set => jump=value; }
         public bool Chrouch { get => chrouch; set => chrouch=value; }
@@ -50,6 +52,8 @@ namespace GrandTrainRobbery.Models
             ActualHp -= 5;
         }
         Map M { get => m; }
+        Player P;
+        List<Bullet> Bullets;
 
         int RangedAttackingStatus = 0;
         int MeleeAttackingStatus = 0;
@@ -61,7 +65,7 @@ namespace GrandTrainRobbery.Models
             {
                 if (rangedattacking)
                 {
-                    if (RangedAttackingStatus > 10)
+                    if (RangedAttackingStatus > 18)
                     {
                         rangedattacking = false;
                         RangedAttackingStatus = 0;
@@ -99,14 +103,18 @@ namespace GrandTrainRobbery.Models
             }
             set
             {
-                meleeattacking = value;
+                if (!meleeattacking)
+                {
+                    meleeattacking = value;
+                }
                 MeleeAttackingStatus = 0;
             }
         }
 
-        public MOB(Map _m, XElement MOBXElement)
+        public MOB(Map _m, XElement MOBXElement,Player p, List<Bullet> bullets)
         {
-            
+            P = p;
+            Bullets = bullets;
             actualHp = 30;
             source = MOBXElement;
             m = _m;
@@ -127,8 +135,36 @@ namespace GrandTrainRobbery.Models
             MoveRight = false;
             Jump = false;
             Chrouch = false;
+            new Thread(thread=>DoWork()).Start();
         }
+        void DoWork()
+        {
+            while (ActualHp>0)
+            {
+                Thread.Sleep(1000);
+                int percentage = rnd.Next(100);
+                if (P.X>X)
+                {
+                    if (MoveLeft)
+                        MoveLeft = false;
 
+                    MoveRight = true;
+
+                    if (percentage<20)
+                        RangedAttack();
+                }
+                if (P.X < X)
+                {
+                    if (MoveRight)
+                        moveRight = false;
+
+                    MoveLeft = true;
+
+                    if (percentage < 20)
+                        RangedAttack();
+                }
+            }
+        }
         public void MeleeAttack()
         {
             MeleeAttacking = true;
@@ -136,7 +172,18 @@ namespace GrandTrainRobbery.Models
 
         public void RangedAttack()
         {
-            RangedAttacking = true;
+            if (!rangedattacking && standing_on_the_ground)
+            {
+                if (MoveLeft)
+                {
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletl.png", X - 78, Y + 38, true, false));
+                }
+                if (MoveRight)
+                {
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletl.png", X + 78, Y + 38, false, true));
+                }
+                RangedAttacking = true;
+            }
         }
     }
 }

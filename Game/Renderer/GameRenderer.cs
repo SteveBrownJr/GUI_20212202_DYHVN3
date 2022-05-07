@@ -120,42 +120,10 @@ namespace Game.Renderer
         }
         Brush[] MOBsBrush()
         {
-            MOBAnimationManagers = new List<AnimationManager>();
             SetupAnimations();
             Brush[] kimenet = new Brush[MOBAnimationManagers.Count];
             for (int i = 0; i < MOBAnimationManagers.Count; i++)
             {
-                if (!mobs[i].standing_on_the_ground)
-                {
-                    
-
-                    if (mobs[i].MoveRight)
-                    {
-                        kimenet[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(2));
-                        continue;
-                    }
-
-                    if (mobs[i].MoveLeft)
-                    {
-                        var ts = new TransformedBitmap();
-                        ts.BeginInit();
-                        ts.Source = MOBAnimationManagers[i].GetNextofThis(2);
-                        ts.Transform = new ScaleTransform(-1, 1, 0, 0);
-                        ts.EndInit();
-                        kimenet[i] = new ImageBrush(ts);
-                        continue;
-                    }
-                    var tb = new TransformedBitmap();
-                    tb.BeginInit();
-                    tb.Source = MOBAnimationManagers[i].GetNextofThis(2);
-                    tb.Transform = new ScaleTransform(-1, 1, 0, 0);
-                    tb.EndInit();
-                    kimenet[i] = new ImageBrush(tb);
-                    continue;
-                }
-                else
-                {
-
                     if (mobs[i].RangedAttacking)
                     {
                         if (mobs[i].MoveLeft)
@@ -183,31 +151,35 @@ namespace Game.Renderer
                             continue;
                         }
                     }
-                    if (mobs[i].MoveRight)
+                    else
                     {
-                        kimenet[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(1));
-                        continue;
+                        if (mobs[i].MoveRight)
+                        {
+                            kimenet[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(1));
+                            continue;
+                        }
+                        else if (mobs[i].MoveLeft)
+                        {
+                            var ts = new TransformedBitmap();
+                            ts.BeginInit();
+                            ts.Source = MOBAnimationManagers[i].GetNextofThis(1);
+                            ts.Transform = new ScaleTransform(-1, 1, 0, 0);
+                            ts.EndInit();
+                            kimenet[i] = new ImageBrush(ts);
+                            continue;
+                        }
+                        else
+                        {
+                            var tb = new TransformedBitmap();
+                            tb.BeginInit();
+                            tb.Source = MOBAnimationManagers[i].GetNextofThis(0);
+                            tb.Transform = new ScaleTransform(-1, 1, 0, 0);
+                            tb.EndInit();
+                            kimenet[i] = new ImageBrush(tb);
+                            continue;
+                        }
                     }
-                    if (mobs[i].MoveLeft)
-                    {
-                        var ts = new TransformedBitmap();
-                        ts.BeginInit();
-                        ts.Source = MOBAnimationManagers[i].GetNextofThis(1);
-                        ts.Transform = new ScaleTransform(-1, 1, 0, 0);
-                        ts.EndInit();
-                        kimenet[i] = new ImageBrush(ts);
-                        continue;
-                    }
-                    var tb = new TransformedBitmap();
-                    tb.BeginInit();
-                    tb.Source = MOBAnimationManagers[i].GetNextofThis(0);
-                    tb.Transform = new ScaleTransform(-1, 1, 0, 0);
-                    tb.EndInit();
-                    kimenet[i] = new ImageBrush(tb);
-                    continue;
-                }
             }
-            
             return kimenet;
         }
         public void SetupLogic(GameLogic logic)
@@ -216,28 +188,48 @@ namespace Game.Renderer
             this.chestview = 0;
             this.model = logic;
             this.control = logic;
-            SetupAnimations();
-        }
-        public void SetupAnimations()
-        {
             PlayerAnimationsManager = new AnimationManager();
             PlayerAnimationsManager.Append(player.TexturePath); //0. a nyugodt animáció
             PlayerAnimationsManager.Append(player.RunTexturePath); //1. a futó animáció
             PlayerAnimationsManager.Append(player.JumpTexturePath); //2. az ugró animáció
             PlayerAnimationsManager.Append(player.AttackTexturePath); //3. a lövés animáció
             PlayerAnimationsManager.Append(player.MeleeTexturePath); //4. a kés animáció
-
-            MOBAnimationManagers = new List<AnimationManager>();
+            
+            SetupAnimations();
+        }
+        public void SetupAnimations()
+        {
             mobs = model.GetMOBs.ToArray();
-            for (int i = 0; i < mobs.Length; i++)
+            try
             {
-                AnimationManager temp = new AnimationManager();
-                temp.Append(mobs[i].TexturePath); //0. a nyugodt animáció
-                temp.Append(mobs[i].RunTexturePath); //1. a futó animáció
-                temp.Append(mobs[i].JumpTexturePath); //2. az ugró animáció
-                temp.Append(mobs[i].AttackTexturePath); //3. a lövés animáció
-                MOBAnimationManagers.Add(temp);
+                if (mobs.Count() != MOBAnimationManagers.Count())
+                {
+                    MOBAnimationManagers = new List<AnimationManager>();
+                    for (int i = 0; i < mobs.Length; i++)
+                    {
+                        AnimationManager temp = new AnimationManager();
+                        temp.Append(mobs[i].TexturePath); //0. a nyugodt animáció
+                        temp.Append(mobs[i].RunTexturePath); //1. a futó animáció
+                        temp.Append(mobs[i].JumpTexturePath); //2. az ugró animáció
+                        temp.Append(mobs[i].AttackTexturePath); //3. a lövés animáció
+                        MOBAnimationManagers.Add(temp);
+                    }
+                }
             }
+            catch (Exception)
+            {
+                MOBAnimationManagers = new List<AnimationManager>();
+                    for (int i = 0; i < mobs.Length; i++)
+                    {
+                        AnimationManager temp = new AnimationManager();
+                        temp.Append(mobs[i].TexturePath); //0. a nyugodt animáció
+                        temp.Append(mobs[i].RunTexturePath); //1. a futó animáció
+                        temp.Append(mobs[i].JumpTexturePath); //2. az ugró animáció
+                        temp.Append(mobs[i].AttackTexturePath); //3. a lövés animáció
+                        MOBAnimationManagers.Add(temp);
+                    }
+            }
+
         }
 
         

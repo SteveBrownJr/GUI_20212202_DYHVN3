@@ -35,7 +35,7 @@ namespace GrandTrainRobbery.Physics
                     {
                         if (item.MoveLeft)
                         {
-                            for (int i = 0; i < 10; i++)
+                            for (int i = 0; i < 15; i++)
                             {
                                 foreach (var item2 in entitys)
                                 {
@@ -58,7 +58,7 @@ namespace GrandTrainRobbery.Physics
                         }
                         if (item.MoveRight)
                         {
-                            for (int i = 0; i < 10; i++)
+                            for (int i = 0; i < 15; i++)
                             {
                                 foreach (var item2 in entitys)
                                 {
@@ -135,6 +135,26 @@ namespace GrandTrainRobbery.Physics
             {
                 e.X -= 10;
                 e.MoveLeft = false;
+            }
+        } 
+        public static void Move(MOB e,Map m)
+        {
+            if (e.Y > m.Floor)
+            {
+                e.Y = m.Floor;
+            }
+            if (e.Jump && e.standing_on_the_ground)
+            {
+                e.Y -= 80;
+                e.Jump = false;
+            }
+            if (e.MoveRight && e.X < m.RightCorner-90)
+            {
+                e.X += 5;
+            }
+            if (e.MoveLeft && e.X > m.LeftCorner)
+            {
+                e.X -= 5;
             }
         }
     }

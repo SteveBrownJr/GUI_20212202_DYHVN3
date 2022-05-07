@@ -39,7 +39,7 @@ namespace GrandTrainRobbery.Data
                 switch (Xentity.Attribute("type").Value)
                 {
                     case "MOB":
-                        entitys.Add(new MOB(wagon, Xentity));
+                        entitys.Add(new MOB(wagon, Xentity,GetPlayer,bullets));
                         break;
                     case "Chest":
                         entitys.Add(new Chest(wagon, Xentity));

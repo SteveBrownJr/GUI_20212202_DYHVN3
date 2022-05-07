@@ -52,7 +52,7 @@ namespace GrandTrainRobbery.Models
             {
                 if (rangedattacking)
                 {
-                    if (RangedAttackingStatus > 10)
+                    if (RangedAttackingStatus > 15)
                     {
                         rangedattacking = false;
                         RangedAttackingStatus = 0;
@@ -76,7 +76,7 @@ namespace GrandTrainRobbery.Models
             {
                 if (meleeattacking)
                 {
-                    if (MeleeAttackingStatus > 2)
+                    if (MeleeAttackingStatus > 3)
                     {
                         meleeattacking = false;
                         MeleeAttackingStatus = 0;
