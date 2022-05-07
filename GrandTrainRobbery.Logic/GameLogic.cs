@@ -100,6 +100,17 @@ namespace GrandTrainRobbery.Logic
         public void PlayerMeele()
         {
             Data.GetPlayer.MeleeAttack();
+            foreach (var item in GetMOBs)
+            {
+                if (Math.Abs(item.X-GetPlayer().X)<50)
+                {
+                    item.ActualHp-=5;
+                    if (item.ActualHp==0)
+                    {
+                        Data.Killed(item);
+                    }
+                }
+            }
         }
         public void LowerActualHp()
         {

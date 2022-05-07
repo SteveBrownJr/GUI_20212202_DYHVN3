@@ -25,6 +25,7 @@ namespace GrandTrainRobbery.Physics
         }
         public static void BulletPhysics(List<IEntity> entitys, List<Bullet> getBullets)
         {
+            
             bool siker = false;
             while (!siker)
             {
@@ -36,11 +37,21 @@ namespace GrandTrainRobbery.Physics
                         {
                             for (int i = 0; i < 10; i++)
                             {
-                                if (entitys.Where(e => e.X == item.X - 25).Count() > 0)
+                                foreach (var item2 in entitys)
                                 {
-                                    
-                                    getBullets.Remove(item);
-                                    break;
+                                    if (item2 is MOB)
+                                    {
+                                        if (item2.X == item.X - 25)
+                                        {
+                                            (item2 as MOB).Sebzodik();
+                                            if (item2.ActualHp < 1)
+                                            {
+                                                entitys.Remove(item2);
+                                            }
+                                            getBullets.Remove(item);
+                                            break;
+                                        }
+                                    }
                                 }
                                 item.X -= 1;
                             }
@@ -49,11 +60,21 @@ namespace GrandTrainRobbery.Physics
                         {
                             for (int i = 0; i < 10; i++)
                             {
-                                if (entitys.Where(e => e.X == item.X - 25).Count() > 0)
+                                foreach (var item2 in entitys)
                                 {
-                                    
-                                    getBullets.Remove(item);
-                                    break;
+                                    if (item2 is MOB)
+                                    {
+                                        if (item2.X == item.X - 25)
+                                        {
+                                            (item2 as MOB).Sebzodik();
+                                            if (item2.ActualHp<1)
+                                            {
+                                                entitys.Remove(item2);
+                                            }
+                                            getBullets.Remove(item);
+                                            break;
+                                        }
+                                    }
                                 }
                                 item.X += 1;
                             }

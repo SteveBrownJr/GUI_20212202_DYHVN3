@@ -45,7 +45,10 @@ namespace GrandTrainRobbery.Models
         public bool Jump { get => jump; set => jump=value; }
         public bool Chrouch { get => chrouch; set => chrouch=value; }
         public int ActualHp { get => actualHp; set => actualHp = value; }
-
+        public void Sebzodik()
+        {
+            ActualHp -= 5;
+        }
         Map M { get => m; }
 
         int RangedAttackingStatus = 0;

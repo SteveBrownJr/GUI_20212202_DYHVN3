@@ -120,6 +120,8 @@ namespace Game.Renderer
         }
         Brush[] MOBsBrush()
         {
+            MOBAnimationManagers = new List<AnimationManager>();
+            SetupAnimations();
             Brush[] kimenet = new Brush[MOBAnimationManagers.Count];
             for (int i = 0; i < MOBAnimationManagers.Count; i++)
             {
@@ -214,7 +216,10 @@ namespace Game.Renderer
             this.chestview = 0;
             this.model = logic;
             this.control = logic;
-            
+            SetupAnimations();
+        }
+        public void SetupAnimations()
+        {
             PlayerAnimationsManager = new AnimationManager();
             PlayerAnimationsManager.Append(player.TexturePath); //0. a nyugodt animáció
             PlayerAnimationsManager.Append(player.RunTexturePath); //1. a futó animáció
@@ -233,7 +238,6 @@ namespace Game.Renderer
                 temp.Append(mobs[i].AttackTexturePath); //3. a lövés animáció
                 MOBAnimationManagers.Add(temp);
             }
-
         }
 
         

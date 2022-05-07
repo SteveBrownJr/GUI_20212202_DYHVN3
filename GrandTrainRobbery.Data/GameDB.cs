@@ -17,6 +17,11 @@ namespace GrandTrainRobbery.Data
         public List<MOB> GetMOBs { get => entitys.Where(t => t is MOB).Select(t=>t as MOB).ToList(); }
         public List<Bullet> GetBullets => bullets;
         public Map GetWagon { get => wagon; }
+        public void Killed(IEntity i)
+        {
+            if (i is MOB)
+                entitys.Remove(i);
+        }
         public Chest GetChest { get => entitys.Where(c => c is Chest).First() as Chest; }
         public IEnumerable<IEntity> GetEntitys { get => entitys; }
         public List<IEntity> GetEntitysList { get => entitys; }
