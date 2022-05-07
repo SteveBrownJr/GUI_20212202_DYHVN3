@@ -7,18 +7,16 @@ namespace GrandTrainRobbery.Physics
 {
     public static class GamePhysics
     {
-        static Stopper s = new Stopper();
         public static void Gravity(Player p)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (!p.standing_on_the_ground)
                 {
-                    p.Y += s.Seconds();
+                    p.Y += 1;
                 }
                 else
                 {
-                    s.Reset();
                     break;
                 }
             }
@@ -58,7 +56,7 @@ namespace GrandTrainRobbery.Physics
                                 }
                                 if (item.Sender is MOB)
                                 {
-                                    if (item.X-25==player.X && Math.Abs(item.Y - player.Y) > 30)
+                                    if (item.X-25==player.X && Math.Abs(item.Y - player.Y) > 15)
                                     {
                                         player.Sebzodik();
                                         getBullets.Remove(item);
@@ -92,7 +90,7 @@ namespace GrandTrainRobbery.Physics
                                 }
                                 if (item.Sender is MOB)
                                 {
-                                    if (item.X - 25 == player.X && Math.Abs(item.Y-player.Y)>30)
+                                    if (item.X - 25 == player.X && Math.Abs(item.Y-player.Y)>15)
                                     {
                                         player.Sebzodik();
                                         getBullets.Remove(item);
