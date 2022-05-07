@@ -48,10 +48,9 @@
     <None Remove="Graphics\Entitys\MOB\Sheriff\WALK\frame_5_delay-0.1s.gif" />
     <None Remove="Graphics\Entitys\MOB\Sheriff\WALK\frame_6_delay-0.1s.gif" />
     <None Remove="Graphics\Entitys\MOB\Sheriff\WALK\frame_7_delay-0.1s.gif" />
-    <None Remove="Graphics\health\00of10hearts.png" />
     <None Remove="Graphics\health\05of10heart.png" />
     <None Remove="Graphics\health\05of20hearts.png" />
-    <None Remove="Graphics\health\05of30hearts.png" />
+    <None Remove="Graphics\health\0of30hearts.png" />
     <None Remove="Graphics\health\10of10hearts.png" />
     <None Remove="Graphics\health\10of20hearts.png" />
     <None Remove="Graphics\health\10of30hearts.png" />
@@ -61,6 +60,7 @@
     <None Remove="Graphics\health\20of30hearts.png" />
     <None Remove="Graphics\health\25of30hearts.png" />
     <None Remove="Graphics\health\30of30hearts.png" />
+    <None Remove="Graphics\health\5of30hearts.png" />
     <None Remove="Graphics\icon.ico" />
     <None Remove="Graphics\levels\level0.png" />
     <None Remove="Graphics\levels\level1.png" />
@@ -112,6 +112,7 @@
     <None Remove="Graphics\Player\Player_SHOOT\frame_09_delay-0.08s.gif" />
     <None Remove="Graphics\Player\Player_STAY.gif" />
     <None Remove="Graphics\Player\Player_STAY\frame_0_delay-0.33s.gif" />
+    <None Remove="Graphics\you_died.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -226,7 +227,7 @@
     <Content Include="Graphics\Entitys\MOB\Sheriff\WALK\frame_7_delay-0.1s.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\health\00of10hearts.png">
+    <Content Include="Graphics\health\0of30hearts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\health\05of10heart.png">
@@ -235,7 +236,7 @@
     <Content Include="Graphics\health\05of20hearts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Graphics\health\05of30hearts.png">
+    <Content Include="Graphics\health\5of30hearts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\health\10of10hearts.png">
@@ -407,6 +408,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\Player\Player_STAY\frame_0_delay-0.33s.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\you_died.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -23,7 +23,7 @@ namespace GrandTrainRobbery.Physics
                 }
             }
         }
-        public static void BulletPhysics(List<IEntity> entitys, List<Bullet> getBullets)
+        public static void BulletPhysics(List<IEntity> entitys,Player player, List<Bullet> getBullets)
         {
             
             bool siker = false;
@@ -41,16 +41,27 @@ namespace GrandTrainRobbery.Physics
                                 {
                                     if (item2 is MOB)
                                     {
-                                        if (item2.X == item.X - 25)
+                                        if (item.Sender is Player)
                                         {
-                                            (item2 as MOB).Sebzodik();
-                                            if (item2.ActualHp < 1)
+                                            if (item2.X == item.X - 25)
                                             {
-                                                entitys.Remove(item2);
+                                                (item2 as MOB).Sebzodik();
+                                                if (item2.ActualHp < 1)
+                                                {
+                                                    entitys.Remove(item2);
+                                                }
+                                                
+                                                break;
                                             }
-                                            getBullets.Remove(item);
-                                            break;
                                         }
+                                    }
+                                }
+                                if (item.Sender is MOB)
+                                {
+                                    if (item.X-25==player.X && Math.Abs(item.Y - player.Y) > 30)
+                                    {
+                                        player.Sebzodik();
+                                        getBullets.Remove(item);
                                     }
                                 }
                                 item.X -= 1;
@@ -64,16 +75,27 @@ namespace GrandTrainRobbery.Physics
                                 {
                                     if (item2 is MOB)
                                     {
-                                        if (item2.X == item.X - 25)
+                                        if (item.Sender is Player)
                                         {
-                                            (item2 as MOB).Sebzodik();
-                                            if (item2.ActualHp<1)
+                                            if (item2.X == item.X - 25)
                                             {
-                                                entitys.Remove(item2);
+                                                (item2 as MOB).Sebzodik();
+                                                if (item2.ActualHp < 1)
+                                                {
+                                                    entitys.Remove(item2);
+                                                }
+                                                getBullets.Remove(item);
+                                                break;
                                             }
-                                            getBullets.Remove(item);
-                                            break;
                                         }
+                                    }
+                                }
+                                if (item.Sender is MOB)
+                                {
+                                    if (item.X - 25 == player.X && Math.Abs(item.Y-player.Y)>30)
+                                    {
+                                        player.Sebzodik();
+                                        getBullets.Remove(item);
                                     }
                                 }
                                 item.X += 1;

@@ -9,7 +9,7 @@ namespace GrandTrainRobbery.Models
     public class Bullet : IEntity
     {
         public int ActualHp => 0;
-
+        public IEntity Sender { get; }
         public string Name { get; set; }
         public int Id { get; set; }
         public string Description { get; set; }
@@ -34,8 +34,9 @@ namespace GrandTrainRobbery.Models
         {
             
         }
-        public Bullet(string texture, int x, int y,bool moveLeft, bool moveright)
+        public Bullet(string texture, int x, int y,bool moveLeft, bool moveright,IEntity sender)
         {
+            Sender = sender;
             Texture = texture;
             X = x;
             Y = y;

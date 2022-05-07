@@ -71,7 +71,7 @@ namespace GrandTrainRobbery.Logic
             new Thread(() =>
             GamePhysics.Gravity(Data.GetMOBs)
             ).Start();
-            GamePhysics.BulletPhysics(Data.GetEntitysList, Data.GetBullets);
+            GamePhysics.BulletPhysics(Data.GetEntitysList,GetPlayer(), Data.GetBullets);
             foreach (Movements move in PlayerMovements)
             {
                 switch (move)

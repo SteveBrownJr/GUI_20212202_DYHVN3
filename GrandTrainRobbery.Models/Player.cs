@@ -98,7 +98,10 @@ namespace GrandTrainRobbery.Models
             }
         }
         private List<Bullet> Bullets;
-
+        public void Sebzodik()
+        {
+            ActualHp -= 5;
+        }
         public Player(Map _m, XElement PlayerXElement,List<Bullet> bullets)
         {
             Bullets = bullets;
@@ -168,11 +171,11 @@ namespace GrandTrainRobbery.Models
             {
                 if (MoveLeft)
                 {
-                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletl.png", X - 78, Y+38, true, false));
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletl.png", X - 78, Y+38, true, false,this));
                 }
                 else
                 {
-                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletr.png",X+78,Y+38,false,true));
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletr.png",X+78,Y+38,false,true,this));
                 }
                
                 RangedAttacking = true;        
