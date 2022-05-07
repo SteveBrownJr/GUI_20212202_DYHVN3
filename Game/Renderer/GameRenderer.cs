@@ -76,6 +76,7 @@ namespace Game.Renderer
             {
                 mobs[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(0));
             }
+            
             return mobs;
         }
         public void SetupLogic(GameLogic logic)
@@ -153,7 +154,7 @@ namespace Game.Renderer
                 {
                     drawingContext.DrawRectangle(mobBrushtemp[i], null, new Rect(mobs[i].X, mobs[i].Y, 90, 90));
                 }
-
+                
             }
 
             // LEVEL 2

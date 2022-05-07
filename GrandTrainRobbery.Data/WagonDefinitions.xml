@@ -72,8 +72,21 @@
 				<X>1000</X>
 				<Y>480</Y>
 			</Entity>
-			<Entity type="Chest">
+			<Entity type="MOB">
 				<Id>2</Id>
+				<Name>Sheriff2</Name>
+				<CalmTexture>Graphics/Entitys/MOB/Sheriff/CALM/</CalmTexture>
+				<RunTexture>Graphics/Entitys/MOB/Sheriff/WALK/</RunTexture>
+				<JumpTexture>Graphics/Entitys/MOB/Sheriff/CALM/</JumpTexture>
+				<MeleeAttack>Graphics/Entitys/MOB/Sheriff/SHOOT/</MeleeAttack>
+				<RangedAttack>Graphics/Entitys/MOB/Sheriff/SHOOT/</RangedAttack>
+				<ChrouchTexture>Graphics/Entitys/MOB/Sheriff/CALM/</ChrouchTexture>
+				<Description>The our enemy2</Description>
+				<X>800</X>
+				<Y>480</Y>
+			</Entity>
+			<Entity type="Chest">
+				<Id>3</Id>
 				<Name>Chest</Name>
 				<CalmTexture>Graphics/Entitys/Chest/chest.png</CalmTexture>
 				<X>1200</X>
