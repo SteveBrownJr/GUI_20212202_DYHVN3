@@ -15,6 +15,8 @@ namespace GrandTrainRobbery.Models
         bool standing_on_the_ground { get; }
         public int X { get; set; }
         public int Y { get; set; }
+        public bool RangedAttacking { get; set; }
+        public bool MeleeAttacking { get; set; }
         public bool MoveLeft { get; set; }
         public bool MoveRight { get; set; }
         public bool Jump { get; set; }

@@ -33,6 +33,8 @@ namespace Game.Renderer
             {
                 if (!player.standing_on_the_ground)
                 {
+                    player.MeleeAttacking = false;
+                    player.RangedAttacking = false;
                     if (player.MoveRight)
                     {
                         return new ImageBrush(PlayerAnimationsManager.GetNextofThis(2));//Ha nem áll a földön akkor ugrik
@@ -50,6 +52,40 @@ namespace Game.Renderer
                     }
                     return new ImageBrush(PlayerAnimationsManager.GetNextofThis(2));//Ha nem áll a földön akkor ugrik
 
+                }
+                if (player.RangedAttacking)
+                {
+                    if (player.MoveRight)
+                    {
+                        return new ImageBrush(PlayerAnimationsManager.GetNextofThis(3));
+                    }
+                    if (player.MoveLeft)
+                    {
+                        var tb = new TransformedBitmap();
+                        tb.BeginInit();
+                        tb.Source = PlayerAnimationsManager.GetNextofThis(3);
+                        tb.Transform = new ScaleTransform(-1, 1, 0, 0);
+                        tb.EndInit();
+                        return new ImageBrush(tb);
+                    }
+                    return new ImageBrush(PlayerAnimationsManager.GetNextofThis(3));
+                }
+                if (player.MeleeAttacking)
+                {
+                    if (player.MoveRight)
+                    {
+                        return new ImageBrush(PlayerAnimationsManager.GetNextofThis(4));
+                    }
+                    if (player.MoveLeft)
+                    {
+                        var tb = new TransformedBitmap();
+                        tb.BeginInit();
+                        tb.Source = PlayerAnimationsManager.GetNextofThis(4);
+                        tb.Transform = new ScaleTransform(-1, 1, 0, 0);
+                        tb.EndInit();
+                        return new ImageBrush(tb);
+                    }
+                    return new ImageBrush(PlayerAnimationsManager.GetNextofThis(4));
                 }
                 if (player.MoveRight)
                 {

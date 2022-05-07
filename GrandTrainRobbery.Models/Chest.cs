@@ -44,6 +44,8 @@ namespace GrandTrainRobbery.Models
         public bool MoveRight { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Jump { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Chrouch { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool RangedAttacking { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool MeleeAttacking { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void MeleeAttack()
         {

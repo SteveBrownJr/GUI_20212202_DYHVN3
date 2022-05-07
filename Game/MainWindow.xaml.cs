@@ -43,7 +43,7 @@ namespace Game
                 List<Movements> MV = new List<Movements>();
                 foreach (Key item in ActiveButtons)
                 {
-                    if (item==Key.A)
+                    if (item == Key.A)
                     {
                         MV.Add(Movements.LEFT);
                     }
@@ -55,9 +55,17 @@ namespace Game
                     {
                         MV.Add(Movements.RIGHT);
                     }
-                    else if (item== Key.W)
+                    else if (item == Key.W)
                     {
                         MV.Add(Movements.UP);
+                    }
+                    else if(item == Key.LeftShift)
+                    {
+                        control.PlayerShoot();
+                    }
+                    else if (item == Key.LeftCtrl)
+                    {
+                        control.PlayerMeele();
                     }
                 }
 

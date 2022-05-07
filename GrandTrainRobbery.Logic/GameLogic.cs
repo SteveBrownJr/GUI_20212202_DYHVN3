@@ -92,7 +92,14 @@ namespace GrandTrainRobbery.Logic
                 Data.GetPlayer.Jump = false;
             }
         }
-
+        public void PlayerShoot()
+        {
+            Data.GetPlayer.RangedAttack();
+        }
+        public void PlayerMeele()
+        {
+            Data.GetPlayer.MeleeAttack();
+        }
         public void LowerActualHp()
         {
             if (Data.GetPlayer.ActualHp > 0)

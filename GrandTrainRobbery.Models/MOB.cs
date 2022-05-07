@@ -47,6 +47,60 @@ namespace GrandTrainRobbery.Models
         public int ActualHp { get => actualHp; set => actualHp = value; }
 
         Map M { get => m; }
+
+        int RangedAttackingStatus = 0;
+        int MeleeAttackingStatus = 0;
+        bool rangedattacking = false;
+        bool meleeattacking = false;
+        public bool RangedAttacking
+        {
+            get
+            {
+                if (rangedattacking)
+                {
+                    if (RangedAttackingStatus > 10)
+                    {
+                        rangedattacking = false;
+                        RangedAttackingStatus = 0;
+                    }
+                    else
+                    {
+                        RangedAttackingStatus++;
+                    }
+                }
+                return rangedattacking;
+            }
+            set
+            {
+                rangedattacking = value;
+                RangedAttackingStatus = 0;
+            }
+        }
+        public bool MeleeAttacking
+        {
+            get
+            {
+                if (meleeattacking)
+                {
+                    if (MeleeAttackingStatus > 3)
+                    {
+                        meleeattacking = false;
+                        MeleeAttackingStatus = 0;
+                    }
+                    else
+                    {
+                        MeleeAttackingStatus++;
+                    }
+                }
+                return meleeattacking;
+            }
+            set
+            {
+                meleeattacking = value;
+                MeleeAttackingStatus = 0;
+            }
+        }
+
         public MOB(Map _m, XElement MOBXElement)
         {
             
@@ -74,12 +128,12 @@ namespace GrandTrainRobbery.Models
 
         public void MeleeAttack()
         {
-            throw new NotImplementedException();
+            MeleeAttacking = true;
         }
 
         public void RangedAttack()
         {
-            throw new NotImplementedException();
+            RangedAttacking = true;
         }
     }
 }

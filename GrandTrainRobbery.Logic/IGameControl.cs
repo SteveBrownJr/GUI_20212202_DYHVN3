@@ -10,5 +10,8 @@ namespace GrandTrainRobbery.Logic
     public interface IGameControl
     {
         public void TimeStep(List<Movements> Buttons);
+        public void PlayerShoot();
+        public void PlayerMeele();
     }
+
 }

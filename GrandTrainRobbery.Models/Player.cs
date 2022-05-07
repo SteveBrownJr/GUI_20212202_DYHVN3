@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,59 @@ namespace GrandTrainRobbery.Models
         public bool Jump { get; set; }
         public bool Chrouch { get; set; }
         public int ActualHp { get { return this.actualhp; } set { actualhp = value; } }
+        int RangedAttackingStatus = 0;
+        int MeleeAttackingStatus = 0;
+        bool rangedattacking = false;
+        bool meleeattacking = false;
+        public bool RangedAttacking 
+        {
+            get 
+            {
+                if (rangedattacking)
+                {
+                    if (RangedAttackingStatus > 10)
+                    {
+                        rangedattacking = false;
+                        RangedAttackingStatus = 0;
+                    }
+                    else
+                    {
+                        RangedAttackingStatus++;
+                    }
+                }
+                return rangedattacking;
+            }
+            set
+            {
+                rangedattacking = value;
+                RangedAttackingStatus = 0;
+            }
+        }
+        public bool MeleeAttacking
+        {
+            get
+            {
+                if (meleeattacking)
+                {
+                    if (MeleeAttackingStatus > 3)
+                    {
+                        meleeattacking = false;
+                        MeleeAttackingStatus = 0;
+                    }
+                    else
+                    {
+                        MeleeAttackingStatus++;
+                    }
+                }
+                return meleeattacking;
+            }
+            set
+            {
+                meleeattacking = value;
+                MeleeAttackingStatus = 0;
+            }
+        }
+
 
         public Player(Map _m, XElement PlayerXElement)
         {
@@ -78,12 +132,12 @@ namespace GrandTrainRobbery.Models
         }
         public void MeleeAttack()
         {
-            throw new NotImplementedException();
+            MeleeAttacking = true;
         }
 
         public void RangedAttack()
         {
-            throw new NotImplementedException();
+            RangedAttacking = true;
         }
     }
 }
