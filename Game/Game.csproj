@@ -113,6 +113,7 @@
     <None Remove="Graphics\Player\Player_STAY.gif" />
     <None Remove="Graphics\Player\Player_STAY\frame_0_delay-0.33s.gif" />
     <None Remove="Graphics\you_died.jpg" />
+    <None Remove="Graphics\you_won.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -411,6 +412,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphics\you_died.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\you_won.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
