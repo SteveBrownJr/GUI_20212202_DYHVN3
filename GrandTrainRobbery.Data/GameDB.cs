@@ -13,6 +13,7 @@ namespace GrandTrainRobbery.Data
         private List<IEntity> entitys;
         public Player GetPlayer { get => player; }
         public Player GetCopyPlayer { get => Player.GetCopy(player); }
+        public List<MOB> GetMOBs { get => entitys.Where(t => t is MOB).Select(t=>t as MOB).ToList(); }
         public Map GetWagon { get => wagon; }
         public Chest GetChest { get => entitys.Where(c => c is Chest).First() as Chest; }
         public IEnumerable<IEntity> GetEntitys { get => entitys; }

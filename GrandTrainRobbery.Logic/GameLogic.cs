@@ -48,6 +48,7 @@ namespace GrandTrainRobbery.Logic
             }
             return ie;
         }
+        public IEnumerable<MOB> GetMOBs => Data.GetMOBs;
         public GameLogic(int lvl)
         {
             PlayerMovements = new List<Movements>();
@@ -62,6 +63,9 @@ namespace GrandTrainRobbery.Logic
             GamePhysics.Move(Data.GetPlayer, Data.GetWagon);
             new Thread(() =>
             GamePhysics.Gravity(Data.GetPlayer)
+            ).Start();
+            new Thread(() =>
+            GamePhysics.Gravity(Data.GetMOBs)
             ).Start();
             foreach (Movements move in PlayerMovements)
             {

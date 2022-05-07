@@ -19,11 +19,13 @@ namespace Game.Renderer
         int db = 0;
         IGameControl control;
         AnimationManager PlayerAnimationsManager;
+        List<AnimationManager> MOBAnimationManagers;
         public Size size;
         int wagonview;
         int chestview;
         Player player => model.GetPlayer();
         Chest chest => model.GetChest();
+        MOB[] mobs;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
         Brush ChestBrush => new ImageBrush(new BitmapImage(new Uri(chest.TexturePath, UriKind.RelativeOrAbsolute)));
         Brush HeartBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "health", $"{player.ActualHp}of30hearts.png"), UriKind.RelativeOrAbsolute)));
@@ -67,16 +69,38 @@ namespace Game.Renderer
                 return new ImageBrush(PlayerAnimationsManager.GetNextofThis(0)); //végesetben is megkell jeleníteni valamit
             } 
         }
+        Brush[] MOBsBrush()
+        {
+            Brush[] mobs = new Brush[MOBAnimationManagers.Count];
+            for (int i = 0; i < MOBAnimationManagers.Count; i++)
+            {
+                mobs[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(0));
+            }
+            return mobs;
+        }
         public void SetupLogic(GameLogic logic)
         {
             this.wagonview = 0;
             this.chestview = 0;
             this.model = logic;
             this.control = logic;
+            
             PlayerAnimationsManager = new AnimationManager();
             PlayerAnimationsManager.Append(player.TexturePath); //0. a nyugodt animáció
             PlayerAnimationsManager.Append(player.RunTexturePath); //1. a futó animáció
             PlayerAnimationsManager.Append(player.JumpTexturePath); //2. az ugró animáció
+            
+            MOBAnimationManagers = new List<AnimationManager>();
+            mobs = model.GetMOBs.ToArray();
+            for (int i = 0; i < mobs.Length; i++)
+            {
+                AnimationManager temp = new AnimationManager();
+                temp.Append(mobs[i].TexturePath); //0. a nyugodt animáció
+                temp.Append(mobs[i].RunTexturePath); //1. a futó animáció
+                temp.Append(mobs[i].JumpTexturePath); //2. az ugró animáció
+                MOBAnimationManagers.Add(temp);
+            }
+
         }
 
         
@@ -124,6 +148,12 @@ namespace Game.Renderer
                 drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
                 drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
                 drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+                Brush[] mobBrushtemp = MOBsBrush();
+                for (int i = 0; i < mobBrushtemp.Length; i++)
+                {
+                    drawingContext.DrawRectangle(mobBrushtemp[i], null, new Rect(mobs[i].X, mobs[i].Y, 90, 90));
+                }
+
             }
 
             // LEVEL 2

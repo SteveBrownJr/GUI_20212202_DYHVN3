@@ -69,8 +69,8 @@
 				<RangedAttack>Graphics/Entitys/MOB/Sheriff/SHOOT/</RangedAttack>
 				<ChrouchTexture>Graphics/Entitys/MOB/Sheriff/CALM/</ChrouchTexture>
 				<Description>The our enemy</Description>
-				<X>-1</X>
-				<Y>-1</Y>
+				<X>1000</X>
+				<Y>480</Y>
 			</Entity>
 			<Entity type="Chest">
 				<Id>2</Id>

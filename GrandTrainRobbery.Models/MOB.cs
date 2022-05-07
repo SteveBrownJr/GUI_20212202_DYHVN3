@@ -49,6 +49,7 @@ namespace GrandTrainRobbery.Models
         Map M { get => m; }
         public MOB(Map _m, XElement MOBXElement)
         {
+            
             actualHp = 30;
             source = MOBXElement;
             m = _m;

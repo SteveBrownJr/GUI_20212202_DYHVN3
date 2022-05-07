@@ -48,6 +48,32 @@ namespace GrandTrainRobbery.Physics
                 }
             }
         }
+        public static void Gravity(List<MOB> entitys)
+        {
+            for (int i = 0; i < entitys.Count; i++)
+            {
+                if (!entitys[i].standing_on_the_ground)
+                {
+                    entitys[i].Y += 1;
+                    if (!entitys[i].standing_on_the_ground)
+                    {
+                        entitys[i].Y += 1;
+                        if (!entitys[i].standing_on_the_ground)
+                        {
+                            entitys[i].Y += 1;
+                            if (!entitys[i].standing_on_the_ground)
+                            {
+                                entitys[i].Y += 1;
+                                if (!entitys[i].standing_on_the_ground)
+                                {
+                                    entitys[i].Y += 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         public static void Move(IEntity e,Map m)
         {
             if (e.Y > m.Floor)
