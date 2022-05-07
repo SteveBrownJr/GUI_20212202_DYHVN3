@@ -76,7 +76,7 @@ namespace GrandTrainRobbery.Models
             {
                 if (meleeattacking)
                 {
-                    if (MeleeAttackingStatus > 3)
+                    if (MeleeAttackingStatus > 2)
                     {
                         meleeattacking = false;
                         MeleeAttackingStatus = 0;
@@ -90,7 +90,10 @@ namespace GrandTrainRobbery.Models
             }
             set
             {
-                meleeattacking = value;
+                if (!meleeattacking)
+                {
+                    meleeattacking = value;
+                }
                 MeleeAttackingStatus = 0;
             }
         }

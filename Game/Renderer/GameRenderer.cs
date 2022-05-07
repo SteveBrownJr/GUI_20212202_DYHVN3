@@ -140,8 +140,34 @@ namespace Game.Renderer
                 }
                 else
                 {
-                    
 
+                    if (mobs[i].RangedAttacking)
+                    {
+                        if (mobs[i].MoveLeft)
+                        {
+                            var ts = new TransformedBitmap();
+                            ts.BeginInit();
+                            ts.Source = MOBAnimationManagers[i].GetNextofThis(3);
+                            ts.Transform = new ScaleTransform(-1, 1, 0, 0);
+                            ts.EndInit();
+                            kimenet[i] = new ImageBrush(ts);
+                            continue;
+                        }
+                        else if (mobs[i].MoveRight)
+                        {
+                            kimenet[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(3));
+                        }
+                        else
+                        {
+                            var ts = new TransformedBitmap();
+                            ts.BeginInit();
+                            ts.Source = MOBAnimationManagers[i].GetNextofThis(3);
+                            ts.Transform = new ScaleTransform(-1, 1, 0, 0);
+                            ts.EndInit();
+                            kimenet[i] = new ImageBrush(ts);
+                            continue;
+                        }
+                    }
                     if (mobs[i].MoveRight)
                     {
                         kimenet[i] = new ImageBrush(MOBAnimationManagers[i].GetNextofThis(1));
