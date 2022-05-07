@@ -10,6 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Graphics\Entitys\Bullet\bullet.png" />
+    <None Remove="Graphics\Entitys\Bullet\bulletl.png" />
+    <None Remove="Graphics\Entitys\Bullet\bulletr.png" />
     <None Remove="Graphics\Entitys\MOB\Sheriff\CALM\frame_0_delay-0.1s.gif" />
     <None Remove="Graphics\Entitys\MOB\Sheriff\CALM\frame_1_delay-0.1s.gif" />
     <None Remove="Graphics\Entitys\MOB\Sheriff\CALM\frame_2_delay-0.1s.gif" />
@@ -112,6 +115,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Graphics\Entitys\Bullet\bulletl.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Entitys\Bullet\bulletr.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Graphics\Entitys\MOB\Sheriff\CALM\frame_0_delay-0.1s.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

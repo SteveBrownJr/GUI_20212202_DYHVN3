@@ -1,6 +1,7 @@
 ﻿using GrandTrainRobbery.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GrandTrainRobbery.Physics
 {
@@ -22,29 +23,48 @@ namespace GrandTrainRobbery.Physics
                 }
             }
         }
-        public static void Gravity(List<IEntity> entitys)
+        public static void BulletPhysics(List<IEntity> entitys, List<Bullet> getBullets)
         {
-            for (int i = 0; i < entitys.Count; i++)
+            bool siker = false;
+            while (!siker)
             {
-                if (!entitys[i].standing_on_the_ground)
+                try
                 {
-                    entitys[i].Y += 1;
-                    if (!entitys[i].standing_on_the_ground)
+                    foreach (var item in getBullets)
                     {
-                        entitys[i].Y += 1;
-                        if (!entitys[i].standing_on_the_ground)
+                        if (item.MoveLeft)
                         {
-                            entitys[i].Y += 1;
-                            if (!entitys[i].standing_on_the_ground)
+                            for (int i = 0; i < 10; i++)
                             {
-                                entitys[i].Y += 1;
-                                if (!entitys[i].standing_on_the_ground)
+                                if (entitys.Where(e => e.X == item.X - 25).Count() > 0)
                                 {
-                                    entitys[i].Y += 1;
+                                    
+                                    getBullets.Remove(item);
+                                    break;
                                 }
+                                item.X -= 1;
+                            }
+                        }
+                        if (item.MoveRight)
+                        {
+                            for (int i = 0; i < 10; i++)
+                            {
+                                if (entitys.Where(e => e.X == item.X - 25).Count() > 0)
+                                {
+                                    
+                                    getBullets.Remove(item);
+                                    break;
+                                }
+                                item.X += 1;
                             }
                         }
                     }
+                    siker = true;
+                }
+                catch (Exception)
+                {
+
+                
                 }
             }
         }

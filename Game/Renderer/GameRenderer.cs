@@ -26,9 +26,22 @@ namespace Game.Renderer
         Player player => model.GetPlayer();
         Chest chest => model.GetChest();
         MOB[] mobs;
+        Bullet[] bs;
         Brush WagonBrush => new ImageBrush(new BitmapImage(new Uri(model.GetLevelPath(), UriKind.RelativeOrAbsolute)));
         Brush ChestBrush => new ImageBrush(new BitmapImage(new Uri(chest.TexturePath, UriKind.RelativeOrAbsolute)));
         Brush HeartBrush => new ImageBrush(new BitmapImage(new Uri(Path.Combine("Graphics", "health", $"{player.ActualHp}of30hearts.png"), UriKind.RelativeOrAbsolute)));
+        Brush[] BulletBrushes { 
+            get
+            {
+                bs = model.GetBullets().ToArray();
+                Brush[] brushes = new Brush[bs.Length];
+                for (int i = 0; i < bs.Length; i++)
+                {
+                    brushes[i] = new ImageBrush(new BitmapImage(new Uri(bs[i].Texture, UriKind.RelativeOrAbsolute)));
+                }
+                return brushes;
+            } 
+        }
         Brush PlayerBrush { get
             {
                 if (!player.standing_on_the_ground)
@@ -272,6 +285,11 @@ namespace Game.Renderer
                 for (int i = 0; i < mobBrushtemp.Length; i++)
                 {
                     drawingContext.DrawRectangle(mobBrushtemp[i], null, new Rect(mobs[i].X, mobs[i].Y, 90, 90));
+                }
+                Brush[] bulletbrush = BulletBrushes;
+                for (int i = 0; i < bulletbrush.Length; i++)
+                {
+                    drawingContext.DrawRectangle(bulletbrush[i], null, new Rect(bs[i].X, bs[i].Y, 20, 5));
                 }
                 
             }

@@ -13,6 +13,7 @@ namespace GrandTrainRobbery.Logic
         public string GetLevelPath();
         public Player GetPlayer();
         public Chest GetChest();
+        public IEnumerable<Bullet> GetBullets();
         public IEnumerable<MOB> GetMOBs { get; }
     }
 }

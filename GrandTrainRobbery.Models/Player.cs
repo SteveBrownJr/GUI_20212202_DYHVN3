@@ -97,10 +97,34 @@ namespace GrandTrainRobbery.Models
                 MeleeAttackingStatus = 0;
             }
         }
+        private List<Bullet> Bullets;
 
+        public Player(Map _m, XElement PlayerXElement,List<Bullet> bullets)
+        {
+            Bullets = bullets;
+            actualhp = 30;
+            source = PlayerXElement;
+            m = _m;
+            Name = PlayerXElement.Element("Name").Value;
+            id = int.Parse(PlayerXElement.Element("Id").Value);
+            description = PlayerXElement.Element("Description").Value;
+            x = int.Parse(PlayerXElement.Element("X").Value);
+            y = int.Parse(PlayerXElement.Element("Y").Value);
+            texturePath = PlayerXElement.Element("CalmTexture").Value;
+            attackTexturePath = PlayerXElement.Element("RangedAttack").Value;
+            chrouchTexturePath = PlayerXElement.Element("ChrouchTexture").Value;
+            meleeTexturePath = PlayerXElement.Element("MeleeAttack").Value;
+            jumpTexturePath = PlayerXElement.Element("JumpTexture").Value;
+            runTexturePath = PlayerXElement.Element("RunTexture").Value;
 
+            MoveLeft = false;
+            MoveRight = false;
+            Jump = false;
+            Chrouch = false;
+        }
         public Player(Map _m, XElement PlayerXElement)
         {
+            Bullets = new List<Bullet>();
             actualhp = 30;
             source = PlayerXElement;
             m = _m;
@@ -140,7 +164,19 @@ namespace GrandTrainRobbery.Models
 
         public void RangedAttack()
         {
-            RangedAttacking = true;
+            if (!rangedattacking && standing_on_the_ground)
+            {
+                if (MoveLeft)
+                {
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletl.png", X - 78, Y+38, true, false));
+                }
+                else
+                {
+                    Bullets.Add(new Bullet("Graphics/Entitys/Bullet/bulletr.png",X+78,Y+38,false,true));
+                }
+               
+                RangedAttacking = true;        
+            }
         }
     }
 }
