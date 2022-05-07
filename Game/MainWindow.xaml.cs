@@ -59,7 +59,7 @@ namespace Game
                     {
                         MV.Add(Movements.UP);
                     }
-                    else if(item == Key.LeftShift)
+                    else if(item == Key.Space)
                     {
                         control.PlayerShoot();
                     }
