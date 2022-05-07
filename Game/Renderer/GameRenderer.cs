@@ -16,6 +16,7 @@ namespace Game.Renderer
     internal class GameRenderer : FrameworkElement
     {
         IGameModel model;
+        int db = 0;
         IGameControl control;
         AnimationManager PlayerAnimationsManager;
         public Size size;
@@ -88,7 +89,7 @@ namespace Game.Renderer
         {
             
             base.OnRender(drawingContext);
-            
+
 
             //if (player != null && model != null && size.Width > 50 && size.Height > 50)
             //{
@@ -124,55 +125,93 @@ namespace Game.Renderer
                 drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
                 drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
             }
+
             // LEVEL 2
             if (player != null && model != null && size.Width > 50 && size.Height > 50 && (control as GameLogic).LVL == 2)
             {
-                if (player.MoveRight && player.X > 800 - 91 - 50 && wagonview != 1360)
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview+=10), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X-=10, player.Y, 90, 90));
-                }
-                else if (player.MoveLeft && player.X < 600 - 91 - 50 && wagonview != 0)
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X += 10, player.Y, 90, 90));
-                }
-                else
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
-                    if (wagonview >= 1360)
-                    {
-                        drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
-                    }
-                }
-
+                drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
                 drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+                if (player.X == 1250 && db != 1)
+                {
+                    db++;
+                    player.X = 0;
+                    
+                }
+                if (db == 1)
+                {
+                    drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X - 20, chest.Y, 90, 90));
+                }
             }
+
+            //if (player != null && model != null && size.Width > 50 && size.Height > 50 && (control as GameLogic).LVL == 2)
+            //{
+            //    if (player.MoveRight && player.X > 800 - 91 - 50 && wagonview != 1360)
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview += 10), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X -= 10, player.Y, 90, 90));
+            //    }
+            //    else if (player.MoveLeft && player.X < 600 - 91 - 50 && wagonview != 0)
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X += 10, player.Y, 90, 90));
+            //    }
+            //    else
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
+            //        if (wagonview >= 1360)
+            //        {
+            //            drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
+            //        }
+            //    }
+
+            //    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+            //}
+
             // LEVEL 3
+
             if (player != null && model != null && size.Width > 50 && size.Height > 50 && (control as GameLogic).LVL == 3)
             {
-                if (player.MoveRight && player.X > 800 - 91 - 50 && wagonview != 2710)
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview += 10), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X -= 10, player.Y, 90, 90));
-                }
-                else if (player.MoveLeft && player.X < 600 - 91 - 50 && wagonview != 0)
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X += 10, player.Y, 90, 90));
-                }
-                else
-                {
-                    drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
-                    drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
-                    if (wagonview >= 2710)
-                    {
-                        drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
-                    }
-                }
+                drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
+                drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
                 drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+                if (player.X == 1250 && db != 2)
+                {
+                    db++;
+                    player.X = 0;
+
+                }
+                if (db == 2)
+                {
+                    drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X - 20, chest.Y, 90, 90));
+                }
             }
+
+
+            //if (player != null && model != null && size.Width > 50 && size.Height > 50 && (control as GameLogic).LVL == 3)
+            //{
+            //    if (player.MoveRight && player.X > 800 - 91 - 50 && wagonview != 2710)
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview += 10), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X -= 10, player.Y, 90, 90));
+            //    }
+            //    else if (player.MoveLeft && player.X < 600 - 91 - 50 && wagonview != 0)
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview -= 10), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X += 10, player.Y, 90, 90));
+            //    }
+            //    else
+            //    {
+            //        drawingContext.DrawRectangle(WagonBrush, null, new Rect(0 - (wagonview), 0, size.Width, size.Height));
+            //        drawingContext.DrawRectangle(PlayerBrush, null, new Rect(player.X, player.Y, 90, 90));
+            //        if (wagonview >= 2710)
+            //        {
+            //            drawingContext.DrawRectangle(ChestBrush, null, new Rect(chest.X, chest.Y, 90, 90));
+            //        }
+            //    }
+            //    drawingContext.DrawRectangle(HeartBrush, null, new Rect(0, 0, 270 / 1.5, 89 / 1.5));
+            //}
 
         }
     }
