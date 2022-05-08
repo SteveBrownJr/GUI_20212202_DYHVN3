@@ -115,7 +115,7 @@ namespace GrandTrainRobbery.Models
         {
             P = p;
             Bullets = bullets;
-            actualHp = 30;
+            actualHp = 20;
             source = MOBXElement;
             m = _m;
             Name = MOBXElement.Element("Name").Value;

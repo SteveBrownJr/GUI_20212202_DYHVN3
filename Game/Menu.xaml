@@ -13,9 +13,9 @@
             <local1:MenuViewModel/>
         </Grid.DataContext>
         <Image x:Name="menu" Source="Graphics/Menu/menu.png" Tag="menu" Stretch="Fill"/>
-        <Button x:Name="lvl1" Content="Level 1: Indianapolis" HorizontalAlignment="Left" Height="50" Margin="881,326,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level1Command}"/>
-        <Button x:Name="lvl2" Content="Level 2: San Antonio" HorizontalAlignment="Left" Height="50" Margin="572,559,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level2Command}"/>
-        <Button x:Name="lvl3" Content="Level 3: Los Angeles" HorizontalAlignment="Left" Height="50" Margin="157,457,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level3Command}"/>
+        <Button x:Name="lvl1" Content="Level 1: Train" HorizontalAlignment="Left" Height="50" Margin="881,326,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level1Command}"/>
+        <Button x:Name="lvl2" Content="Level 2: Train Station" HorizontalAlignment="Left" Height="50" Margin="572,559,0,0" VerticalAlignment="Top" Width="120" Background="SandyBrown" Command="{Binding Level2Command}"/>
+        <Button x:Name="lvl3" Content="Level 3: Space" HorizontalAlignment="Left" Height="50" Margin="157,457,0,0" VerticalAlignment="Top" Width="126" Background="SandyBrown" Command="{Binding Level3Command}"/>
         <Button x:Name="quit" Content="Quit" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Background="SandyBrown" Command="{Binding ExitCommand}"/>
     </Grid>
 </Window>
